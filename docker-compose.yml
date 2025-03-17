@@ -1,0 +1,34 @@
+# version: '3.8'
+
+services:
+  docusaurus-dev:
+    build:
+      context: .
+      target: development
+      cache_from:
+        - docusaurus-dev
+    container_name: docusaurus_dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Existing volumes at old compose file
+      # - ./../docusaurus:/app/website
+      # - ./../readmes:/app/docs
+
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run start
+
+  # docusaurus-prod:
+  #   build:
+  #     context: .
+  #     target: build
+  #     cache_from:
+  #       - docusaurus-prod
+  #   container_name: docusaurus_prod
+  #   ports:
+  #     - "8080:80"
+  #   environment:
+  #     - NODE_ENV=production
