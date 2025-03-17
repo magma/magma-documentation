@@ -10,8 +10,9 @@ description: Task list for setting up the new Docusaurus instance and project co
 - [ ] configure translations (i18n)
 - [ ] SEO
     - https://developers.google.com/search/docs/specialty/international/localized-versions?hl=pt-br
+- [ ] configure analytics
+- [ ] configure CI/CD
+- [ ] create bot to handle the issues automations between the main repo and the documentation repo 
+- [ ] add the workflow to the main repo
 - [ ] test
 - [ ] deploy
-- [ ] configure CI/CD
-- [ ] configure analytics
-- [ ] blog(?) See more at the [discussion poll](https://github.com/see7e/magma-doc.usaurus/discussions/2)
