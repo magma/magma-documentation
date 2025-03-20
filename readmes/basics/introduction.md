@@ -5,23 +5,67 @@ hide_title: true
 ---
 # Introduction
 
-Magma is an open-source software platform that gives network operators an open, flexible and extendable mobile core network solution. Magma enables better connectivity by:
+## What is Magma?
 
-- Allowing operators to offer cellular service without vendor lock-in with a modern, open source core network
-- Enabling operators to manage their networks more efficiently with more automation, less downtime, better predictability, and more agility to add new services and applications
-- Enabling federation between existing MNOs and new infrastructure providers for expanding rural infrastructure
-- Allowing operators who are constrained with licensed spectrum to add capacity and reach by using Wi-Fi and CBRS
+Magma is an [open-source](https://github.com/magma/magma/) software platform designed to provide a flexible, scalable, and cost-effective solution for building wireless networks, particularly LTE, 5G, and Wi-Fi networks. It allows researchers and operators to extend network coverage, reduce costs, and simplify network management.
 
-## Magma Architecture
+Magma is designed to work in environments where traditional mobile network infrastructure is either too costly or complex to deploy, such as rural areas, private enterprise networks, and developing regions.
 
-The figure below shows the high-level Magma architecture. Magma is designed to be 3GPP generation and access network (cellular or WiFi) agnostic. It can flexibly support a radio access network with minimal development and deployment effort.
+## What problem does it solve?
 
-Magma has three major components:
+Magma addresses several key challenges in mobile networking:
 
-- **Access Gateway:** The Access Gateway (AGW) provides network services and policy enforcement. In an LTE network, the AGW implements an evolved packet core (EPC), and a combination of an AAA and a PGW. It works with existing, unmodified commercial radio hardware.
+- High Costs & Complexity:
+    - Traditional mobile network infrastructure can be expensive and complex, requiring proprietary hardware and extensive expertise.
+    - Magma allows operators to offer cellular service without vendor lock-in with a modern, open source core network, enabling operators to manage their networks more efficiently, with more automation, less downtime, better predictability and agility to add new services and applications.
+- Limited Coverage:
+    - Many areas, particularly rural or remote regions, lack sufficient mobile network coverage due to high deployment costs.
+    - Magma enables federation with existing MNOs or new infrastructure providers for expanding rural infrastructure.
+- Interoperability:
+    - Magma provides an open and software-defined networking (SDN) approach, allowing integration with different radio access technologies (RAN) and core networks, allowing operators who are constrained with licensed spectrum to add capacity and reach by using Wi-Fi and CBRS.
+- Edge Computing & Localized Networks:
+    - Magma allows network operators to deploy local breakouts, reducing reliance on centralized cloud infrastructures.
 
-- **Orchestrator:** Orchestrator is a cloud service that provides a simple and consistent way to configure and monitor the wireless network securely. The Orchestrator can be hosted on a public/private cloud. The metrics acquired through the platform allows you to see the analytics and traffic flows of the wireless users through the Magma web UI.
+## What technology does it implement?
 
-- **Federation Gateway:** The Federation Gateway integrates the MNO core network with Magma by using standard 3GPP interfaces to existing MNO components.  It acts as a proxy between the Magma AGW and the operator's network and facilitates core functions, such as authentication, data plans, policy enforcement, and charging to stay uniform between an existing MNO network and the expanded network with Magma.
+Magma provides a lightweight mobile core network (EPC and 5GC) with a software-defined approach to simplify management and scaling. It includes:
 
-![Magma architecture diagram](assets/magma_overview.png?raw=true "Magma Architecture")
+- Access Gateway (AGW):
+    - A software-based mobile core network supporting LTE and 5G core functions (MME, HSS, SGW, PGW, AMF, SMF, UPF). Provides network services and policy enforcement.
+- Orchestrator (orc8r):
+    - A cloud-based control plane for managing multiple AGWs remotely.
+    - Enables metrics visualization, analytics and traffic flows trough the Magma NMS.
+- Federation Gateway (FGW):
+    - Allows integration with traditional mobile operator (MNO) cores using standard 3GPP interfaces and supports roaming scenarios.
+    - It acts as a proxy between the Magma AGW and the operator's network and facilitates core functions, such as authentication, data plans, policy enforcement, and charging to stay conformant with an existing MNO network and the expanded network with Magma.
+- Subscriber Management (NMS):
+    - Provides an easy way to manage users, SIMs, and policies.
+
+The figure below shows the high-level Magma architecture. Magma is designed to be 3GPP generation and access network (cellular or WiFi) agnostic. It can flexibly support a radio access network with minimal effort.
+
+![Magma architecture diagram](../assets/magma_overview.png?raw=true "Magma Architecture")
+
+## What Technology Does It Use?
+
+Magma leverages a variety of modern technologies to implement its solutions:
+
+- Containerization & Orchestration:
+    - Uses Docker and Kubernetes for deployment and scalability in a microservice based architecture.
+- Bazel:
+    - A build system developed and maintained by Google for efficiently compiling, testing and managing dependencies.
+- gRPC & Protobuf:
+    - Used for fast and secure communication between components.
+- Linux & Open-Source Networking Stack:
+    - Uses components like Open vSwitch (OVS) for network forwarding.
+- Cloud & Edge Computing:
+    - Designed to run in public clouds (AWS, GCP) and on-premises edge devices.
+    - Allows installation in baremetal embedded system with ARM architecture.
+- C++, Python & Go:
+    - The main programming languages used in development.
+    - Multiple language equals multiple opportunities to contribute.
+
+## Community
+
+Join the [Magma Slack channel](https://join.slack.com/t/magmacore/shared_invite/zt-g76zkofr-g6~jYiS3KRzC9qhAISUC2A) and interact with our active community.
+
+Have you found anything innacurate or deficient with documentation? Open a PR or issue at [magma/magma-documentation](https://github.com/magma/magma-documentation/issues).
