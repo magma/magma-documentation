@@ -1,12 +1,33 @@
-version: "3.7"
+version: '3.8'
 
 services:
-  docusaurus:
+  docusaurus-dev:
+    build:
+      context: .
+      target: development
+      cache_from:
+        - docusaurus-dev
+    container_name: docusaurus_dev
+    ports:
+      - "3000:3000"
     volumes:
       - ./../docusaurus:/app/website
-      - ./../readmes:/app/readmes
-    ports:
-      - 3000:3000/tcp
-      - 35729:35729/tcp
-    image: magma_docusaurus
-    command: bash -c 'npm install && npm start -- --host 0.0.0.0'
+      - ./../readmes:/app/docs
+
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run start
+
+  # docusaurus-prod:
+  #   build:
+  #     context: .
+  #     target: build
+  #     cache_from:
+  #       - docusaurus-prod
+  #   container_name: docusaurus_prod
+  #   ports:
+  #     - "8080:80"
+  #   environment:
+  #     - NODE_ENV=production

@@ -1,20 +1,54 @@
-# Dependencies
-/node_modules
+# Node modules
+**/data/
+**/node_modules/
 
-# Production
-/build
+# Build files
+**/build/
+**/.docusaurus/
+**/.cache/
+**/.cache-loader/
 
-# Generated files
-.docusaurus
-.cache-loader
+# Environment variables
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
 
-# Misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/lerna-debug.log*
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# IDE-specific files
+**/.idea/
+**/.vscode/
+
+# TypeScript build files
+**/*.tsbuildinfo
+
+# MacOS system files
+**/.DS_Store
+
+# Linux files
+**/*.pid
+
+# Editor-specific files
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw*
+
+# Miscellaneous
+**/*.DS_Store
+**/*.log
+**/*.swp
+
+# Ignore any package-lock or yarn.lock if using a different package manager
+# Uncomment the one you're not using
+**/yarn.lock
+# **/package-lock.json
+# **/pnpm-lock.yaml
