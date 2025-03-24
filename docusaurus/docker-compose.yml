@@ -19,15 +19,3 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run start
-
-  # docusaurus-prod:
-  #   build:
-  #     context: .
-  #     target: build
-  #     cache_from:
-  #       - docusaurus-prod
-  #   container_name: docusaurus_prod
-  #   ports:
-  #     - "8080:80"
-  #   environment:
-  #     - NODE_ENV=production
