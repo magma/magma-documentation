@@ -8,7 +8,7 @@ original_id: docusaurus
 ### Generating the Documentation Website
 
 1. Ensure [docker](https://docs.docker.com/install/) is installed
-2. From `magma/docs`, run `./docusaurus/create_docusaurus_website.sh`
+2. Run `./scripts/create_docusaurus_website.sh`
 3. Navigate to http://127.0.0.1:3000/magma/ to view a local version of the site
 
 ### Directory Structure
