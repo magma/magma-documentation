@@ -9,6 +9,9 @@ def get_created_md_files():
     """
     Identify and return a list of Markdown (.md, .mdx) files that were added
     in the current Git branch compared to the main branch.
+    The function uses `git diff` to determine the files that have been added
+    (status "A") and filters them to include only Markdown files located within
+    the documentation directory.
     Returns:
         list[Path]: A list of relative paths to the newly created Markdown files.
     """
