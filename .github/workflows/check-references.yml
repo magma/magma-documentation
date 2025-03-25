@@ -1,0 +1,29 @@
+name: Check Markdown References
+
+on:
+  pull_request:
+    paths:
+      - 'docusaurus/docs/**/*.md'
+      - 'docusaurus/docs/**/*.mdx'
+      - '**/*.js'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.json'
+
+jobs:
+  check-references:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to detect file changes with git diff
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run reference check
+        run: |
+          pip install --upgrade pip
+          python scripts/check_doc_references.py
