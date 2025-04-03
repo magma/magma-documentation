@@ -1,0 +1,122 @@
+# Copyright 2022 The Magma Authors.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# owner: @magma/approvers-infra
+# purpose: Check the documentation changes for issues and formatting errors
+# remediation: 
+---
+name: Docs Check
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  docusaurus-test:
+    name: Docusaurus Build & Log
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd docusaurus/
+          yarn install --frozen-lockfile
+
+      - name: Run Docusaurus test
+        id: build
+        run: yarn test > build.log 2>&1 || echo "FAILED" > .docusaurus_failed
+
+      - name: Upload build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: docusaurus-build-log
+          path: build.log
+
+      - name: Save failure flag
+        if: failure()
+        run: echo "Docusaurus build failed"
+
+  markdown-lint:
+    name: Markdown Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+      - name: Run markdownlint
+        run: markdownlint "docs/**/*.md" "readmes/**/*.md"
+
+  translation-consistency:
+    name: Translation Consistency Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install dos2unix dependency
+        run: sudo apt-get update && sudo apt-get install -y dos2unix
+      - name: Grant execute permissions and convert script file
+        run: |
+          chmod +x ./.github/workflows/scripts/check_translations.sh
+          dos2unix ./.github/workflows/scripts/check_translations.sh
+      - name: Check Translation Consistency
+        run: |
+          ./.github/workflows/scripts/check_translations.sh --debug
+        shell: bash
+
+  id-filename-sync:
+    name: Docusaurus ID & Filename Sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dos2unix dependency
+        run: sudo apt-get update && sudo apt-get install -y dos2unix
+      - name: Grant execute permissions to scripts and convert script file
+        run: |
+          chmod +x ./.github/workflows/scripts/check_id_matches_filename.sh
+          dos2unix ./.github/workflows/scripts/check_id_matches_filename.sh
+      - name: Check ID matches filename
+        run: |
+          ./.github/workflows/scripts/check_id_matches_filename.sh --debug
+
+  check-symlinks:
+    name: Broken Symlinks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for broken symlinks in docusaurus/
+        working-directory: ${{ github.workspace }}/docusaurus
+        run: |
+          BROKEN=$(find . -xtype l)
+          if [ -n "$BROKEN" ]; then
+            echo "❌ Broken symlinks found:"
+            echo "$BROKEN"
+            exit 1
+          else
+            echo "✅ No broken symlinks found in ./docusaurus."
+          fi
+
+  markdown-link-check:
+    name: Markdown URL Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-verbose-mode: 'yes'
+          config-file: '.github/workflows/config/markdown_link_check_config.json'
+          folder-path: './docusaurus/docs'
