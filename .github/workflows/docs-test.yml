@@ -38,17 +38,7 @@ jobs:
 
       - name: Run Docusaurus test
         id: build
-        run: yarn test > build.log 2>&1 || echo "FAILED" > .docusaurus_failed
-
-      - name: Upload build log
-        uses: actions/upload-artifact@v4
-        with:
-          name: docusaurus-build-log
-          path: build.log
-
-      - name: Save failure flag
-        if: failure()
-        run: echo "Docusaurus build failed"
+        run: yarn test
 
   markdown-lint:
     name: Markdown Format Check
@@ -67,12 +57,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install dos2unix dependency
-        run: sudo apt-get update && sudo apt-get install -y dos2unix
       - name: Grant execute permissions and convert script file
         run: |
           chmod +x ./.github/workflows/scripts/check_translations.sh
-          dos2unix ./.github/workflows/scripts/check_translations.sh
       - name: Check Translation Consistency
         run: |
           ./.github/workflows/scripts/check_translations.sh --debug
@@ -83,12 +70,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dos2unix dependency
-        run: sudo apt-get update && sudo apt-get install -y dos2unix
       - name: Grant execute permissions to scripts and convert script file
         run: |
           chmod +x ./.github/workflows/scripts/check_id_matches_filename.sh
-          dos2unix ./.github/workflows/scripts/check_id_matches_filename.sh
       - name: Check ID matches filename
         run: |
           ./.github/workflows/scripts/check_id_matches_filename.sh --debug

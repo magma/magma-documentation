@@ -2,6 +2,9 @@
 # Description: Ensure any updated docs in /docs have corresponding translations
 
 DEBUG_MODE="false"
+DOCS_DIR="docusaurus/docs"
+EXTENSIONS=("*.md" "*.mdx")
+FIND_EXPR=""
 
 # Parse command line arguments
 while [ "$#" -gt 0 ]; do
@@ -11,20 +14,38 @@ while [ "$#" -gt 0 ]; do
             shift
             ;;
         *)
-            shift
+            echo "❌ Error: Unknown option '$1'"
+            exit 1
             ;;
     esac
 done
 
-echo "🔍 Checking for missing translations..."
+echo "🔍 Checking for missing translations in $DOCS_DIR"
+
+if [ ! -d "$DOCS_DIR" ]; then
+    echo "❌ Error: Documentation directory not found at $DOCS_DIR"
+    exit 1
+fi
+
 if [ "$DEBUG_MODE" = "true" ]; then
     echo "⚠️ DEBUG MODE: Checking ALL documentation files"
 fi
 
+# TODO: Probably transform in a dedicated function as is used in chack_id and check_translations
 # Get modified files or all files based on debug mode
 if [ "$DEBUG_MODE" = "true" ]; then
-    cd docusaurus/docs
-    MODIFIED_DOCS=$(find . -type f \( -name "*.md" -o -name "*.mdx" \) ! -path "versioned_docs/*")
+    # Build the `-name` expression dynamically
+    for EXT in "${EXTENSIONS[@]}"; do
+        if [ -n "$FIND_EXPR" ]; then
+            FIND_EXPR="$FIND_EXPR -o -name \"$EXT\""
+        else
+            FIND_EXPR="-name \"$EXT\""
+        fi
+    done
+    # Wrap the whole expression in escaped parentheses
+    FIND_CMD="find "$DOCS_DIR" -type f \\( $FIND_EXPR \\) ! -path \"versioned_docs/*\""
+    # Evaluate and execute
+    MODIFIED_DOCS=$(eval $FIND_CMD)
 else
     BASE_REF="${GITHUB_BASE_REF:-origin/main}"
     MODIFIED_DOCS=$(git diff --name-only "$BASE_REF...HEAD" -- 'docs/**/*.md' 'docs/**/*.mdx' ':!versioned_docs/**')
