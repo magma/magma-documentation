@@ -36,11 +36,15 @@ jobs:
           cd docusaurus/
           yarn install --frozen-lockfile
 
-      - name: Run Docusaurus test
-        id: build
+      - name: Build and test Docusaurus
         run: |
           cd docusaurus/
           yarn test
+          
+      - name: Verify build output
+        run: |
+          cd docusaurus/
+          test -d build-test && echo "✅ Build successful"
 
   markdown-lint:
     name: Markdown Format Check
