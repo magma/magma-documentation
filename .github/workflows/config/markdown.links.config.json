@@ -1,10 +1,10 @@
 {
   "ignorePatterns": [
     {
-      "pattern": "^https://localhost(/.*)?$"
+      "pattern": "^https?://(localhost|127\\.0\\.0\\.1)(:\\d+)?(/.*)?$"
     },
     {
-      "pattern": "^https://127\\.0\\.0\\.1:\\d+(/.*)?$"
+      "pattern": "^https?://controller\\.url\\.sample(:\\d+)?(/.*)?$"
     }
   ]
 }

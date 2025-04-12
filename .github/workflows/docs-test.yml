@@ -105,5 +105,5 @@ jobs:
         with:
           use-quiet-mode: 'yes'
           use-verbose-mode: 'yes'
-          config-file: '.github/workflows/config/markdown_link_check_config.json'
+          config-file: '.github/workflows/config/markdown.links.config.json'
           folder-path: './docusaurus/docs'
