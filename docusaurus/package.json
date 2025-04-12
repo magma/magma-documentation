@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "test": "yarn build:test && yarn check-links",
+    "test": "node test.js",
     "build:test": "docusaurus build --no-minify --out-dir ./build_test",
     "check-links": "lychee ./build_test/**/*.html --exclude-mail --exclude './**/proposal/**'"
   },
