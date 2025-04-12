@@ -56,7 +56,7 @@ If you also want to remove the volumes, add the flag `-v`/`--volumes` to the com
 
 
 > [!NOTE]
-> For more development information, please refer to the [development notes](./src/development-notes.md) and official [Docussaurus documentation](https://docusaurus.io/docs).
+> For more development information, please refer to the official [Docussaurus documentation](https://docusaurus.io/docs).
 
 ### Production
 
