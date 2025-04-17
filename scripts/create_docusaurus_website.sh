@@ -13,9 +13,15 @@
 
 set -e
 
+# ==============================
+# Choose environment: development | production
+# Default is "development"
+ENV=${ENV:-development}
+# ==============================
+
 function exit_timeout() {
   echo ''
-  docker compose logs docusaurus
+  docker compose logs $SERVICE
   echo ''
   echo "Timed out after ${1}s waiting for Docusaurus container to build. See logs above for more info."
   echo "Possible remedies:"
@@ -23,7 +29,7 @@ function exit_timeout() {
   exit 1
 }
 
-# spin until localhost:3000 returns HTTP code 200.
+# spin until localhost:3000 returns HTTP code 200 (only for dev)
 function spin() {
   maxsec=300
   spin='-\|/'
@@ -38,16 +44,31 @@ function spin() {
   printf "\r \n"
 }
 
+# Select service name and port based on environment
+if [[ "$ENV" == "production" ]]; then
+  SERVICE="docusaurus-prod"
+  PORT=8080
+  URL="http://localhost:$PORT/"
+else
+  SERVICE="docusaurus-dev"
+  PORT=3000
+  URL="http://localhost:$PORT/docs/basics/introduction"
+fi
+
+# Run
+echo "==> Starting Docusaurus in '$ENV' mode..."
+
 docker compose down
-docker build -t magma_docusaurus .
-docker compose --compatibility up -d
+docker compose --compatibility up -d $SERVICE
 
-echo ''
-echo 'NOTE: README changes will live-reload. Sidebar changes require re-running this script.'
-echo ''
-echo 'Waiting for Docusaurus site to come up...'
-echo 'If you want to follow the build logs, run docker compose logs -f docusaurus'
-spin
-echo 'Navigate to http://localhost:3000/ to see the docs.'
+if [[ "$ENV" == "development" ]]; then
+  echo ''
+  echo 'NOTE: README changes will live-reload. Sidebar changes require re-running this script.'
+  echo ''
+  echo 'Waiting for Docusaurus site to come up...'
+  echo "If you want to follow the build logs: docker compose logs -f $SERVICE"
+  spin
+fi
 
-xdg-open 'http://localhost:3000/docs/next/basics/introduction.html' || true
+echo "==> Docusaurus is running at: $URL"
+# xdg-open "$URL" || true
