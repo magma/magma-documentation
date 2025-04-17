@@ -16,6 +16,15 @@
 const url = process.env.DOCUSAURUS_URL || 'https://magmacore.org'
 const baseUrl = process.env.DOCUSAURUS_BASE_URL || '/'
 
+// Security note on visibility of this secret in the source code: the API key is
+// not secured by secrecy. It is secured by a referer check for magma.github.io
+// and by a rate limit, both administered on the Algolia site. Linux Foundation
+// has a 1Password file with the login info. For debugging on your own machine
+// set the environment variable to this unsecured key:
+// f95caeb7bc059b294eec88e340e5445b
+const algoliaApiKey =
+  process.env.ALGOLIA_API_KEY || '7b4d4c984e53d3a746869d22ed9e983b';
+
 const mermaid = require('remark-mermaid')
 
 const siteConfig = {
@@ -78,7 +87,7 @@ const siteConfig = {
 
   // Enable Algolia DocSearch Functionality within Docusaurus
   algolia: {
-    apiKey: 'f95caeb7bc059b294eec88e340e5445b',
+    apiKey: algoliaApiKey,
     indexName: 'magma',
   },
 
