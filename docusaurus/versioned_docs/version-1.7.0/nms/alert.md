@@ -96,7 +96,7 @@ Operators can create custom alert rules by creating an expression based on metri
 
 Magma gateways collect various metrics at a regular intervals and push them into Orchestrator. Orchestrator stores these metrics in a Prometheus instance. The Prometheus instance along with AlertManager provides us support in querying various metrics on the system and setting alerts based on that.
 
-[We currently support following metrics on our Access gateways.](metrics#list-of-metrics-which-are-currently-available)
+[We currently support following metrics on our Access gateways.](metrics.md#list-of-metrics-which-are-currently-available)
 
 #### Custom Alert Configuration
 

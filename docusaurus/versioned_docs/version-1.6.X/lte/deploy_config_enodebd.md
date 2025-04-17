@@ -9,8 +9,8 @@ original_id: deploy_config_enodebd
 
 ## Prerequisites
 
-Make sure you follow the instructions in "[Deploying Orchestrator](../orc8r/deploy_intro)" for successful
-installation of Orchestrator and the instructions in "[AGW Configuration](deploy_config_agw)" to provision and
+Make sure you follow the instructions in "[Deploying Orchestrator](../orc8r/deploy_intro.md)" for successful
+installation of Orchestrator and the instructions in "[AGW Configuration](deploy_config_agw.md)" to provision and
 configure your Access Gateway (AGW).
 
 ## S1 interface

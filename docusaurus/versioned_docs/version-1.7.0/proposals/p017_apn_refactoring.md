@@ -69,7 +69,7 @@ Currently two main issues exists in the way APNs are handled
 
 ## **API changes**
 
-/lte/{network_id}/gateways/{gateway_id}/apn_configs (Add new apn config to the gateway)
+`/lte/{network_id}/gateways/{gateway_id}/apn_configs` (Add new apn config to the gateway)
 gateway_apn_config
 
 - apn_id

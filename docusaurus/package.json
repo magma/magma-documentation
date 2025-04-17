@@ -13,8 +13,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "test": "node test.js",
-    "build:test": "docusaurus build --dev --no-minify --out-dir ./build-test",
-    "check-links": "lychee ./build_test/**/*.html --exclude-mail --exclude './**/proposal/**'"
+    "build:test": "docusaurus build --dev --no-minify --out-dir ./build",
+    "check-links": "lychee ./build/**/*.html --exclude-mail --exclude './**/proposal/**'"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",

@@ -44,7 +44,7 @@ jobs:
       - name: Verify build output
         run: |
           cd docusaurus/
-          test -d build-test && echo "✅ Build successful"
+          test -d build && echo "✅ Build successful"
 
   markdown-lint:
     name: Markdown Format Check

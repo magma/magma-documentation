@@ -98,7 +98,7 @@ Roaming you need:
 
 - Install [Or8cr](https://magma.github.io/magma/docs/orc8r/architecture_overview),
 - Install [Federation Gateway](https://magma.github.io/magma/docs/feg/deploy_intro) and,
-- Install [Access Gateway](https://magma.github.io/magma/docs/lte/setup_deb).
+- Install [Access Gateway](https://magma.github.io/magma/docs/lte/setup_deb.md).
 - Create a Federate Deployment (see [below](#Create a Federated Deployment)).
 - Make sure your setup is able to serve calls with your local subscribers
 

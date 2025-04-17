@@ -14,7 +14,7 @@ continues to grow.
 ## Configuration/system settings
 
 If you have a gateway running in a VM (as described in the [Quick Start
-Guide](../basics/quick_start_guide)), the `magma` directory is shared between
+Guide](../basics/quick_start_guide.md)), the `magma` directory is shared between
 the guest and host machine, so changes made on either system reflect on the
 other.  Exceptions to this rule are the systemd unit files and python scripts.
 Changes to these files on the guest or host need to be manually synced.
@@ -254,7 +254,7 @@ print_grpc_payload: true
 
 Many services have a command line interface (CLI) that can be used for
 debugging and configuration. Check the [AGW
-Readme](readme_agw.md#command-line-interfaces) for more details.
+Readme]((./readme_agw.md#command-line-interfaces) for more details.
 
 ### Analyzing raw network packets
 
@@ -308,7 +308,7 @@ dependent on are already running. Follow the steps below:
 ### Checking Redis entries for stateless services
 
 When the services are running in stateless mode, as described in [Testing
-stateless Access Gateway](s1ap_tests#testing-stateless-access-gateway), you can
+stateless Access Gateway](./s1ap_tests.md#testing-stateless-access-gateway), you can
 connect to the redis service with `redis-cli -p 6380`. Then on the shell, you
 can list all the keys with `KEYS *`. The keys for state follow the pattern
 `<IMSI>:<Service/MME task>`. For example:

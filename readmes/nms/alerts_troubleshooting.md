@@ -30,7 +30,7 @@ It is one of the key KPI and may impact network deployment/expansion/operations 
 1. If any Orchestrator pods has some issue, please try to resolve that first.
 2. Make sure that Gateways are successfully checking in. If they are not checked-in, means that their metrics won’t be reported. Please follow [these steps](https://magma.github.io/magma/docs/howtos/troubleshooting/agw_unable_to_checkin) to troubleshoot.
 3. Perform relevant sync/changes if any update has been performed on NMS -> Network.
-4. Make sure that configuration for [Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw), [eNodeB](https://magma.github.io/magma/docs/lte/deploy_config_enodebd) and [APN](https://magma.github.io/magma/docs/lte/deploy_config_apn) has been followed.
+4. Make sure that configuration for [Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw.md), [eNodeB](https://magma.github.io/magma/docs/lte/deploy_config_enodebd) and [APN](https://magma.github.io/magma/docs/lte/deploy_config_apn) has been followed.
 5. If any faulty Gateway has been identified, please consider rebooting _enodebd_ service. Please consider rebooting the device (this should be done in minimal traffic duration) if need be.
 6. If still not resolved, then capture trace on eth1 interface on issue Gateway(s) to identify the case. Try to analyze and identify the cause. This will give an indication of any parameter inserted by eNodeB causing the issue.
 7. If issue persists then get higher level support by providing relevant traces/logs and [additional files](https://magma.github.io/magma/docs/lte/debug_show_tech). Report issue with eNodeB (vendor, firmware etc) and Magma node details along with any issue found in step 6.
@@ -75,7 +75,7 @@ Subscribers will not be able to access the services.
 ### Troubleshooting steps
 
 1. Perform relevant sync/changes if any update has been performed on NMS -> Network.
-2. Make sure that configuration for [Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw), [eNodeB](https://magma.github.io/magma/docs/lte/deploy_config_enodebd) and [APN](https://magma.github.io/magma/docs/lte/deploy_config_apn) has been followed.
+2. Make sure that configuration for [Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw.md), [eNodeB](https://magma.github.io/magma/docs/lte/deploy_config_enodebd) and [APN](https://magma.github.io/magma/docs/lte/deploy_config_apn) has been followed.
 3. Please follow troubleshooting steps from [here](https://magma.github.io/magma/docs/howtos/troubleshooting/user_unable_to_attach) for issue Gateway. Please note the error code.
 4. Please check mme logs, verify if the service request failures are coming from a specific user/device/model/firmware.
 5. You may use PromQL _ue_attach{networkID=&lt;NetworkID>,result="failure"}_ to isolate further.
@@ -106,7 +106,7 @@ Network, eNodeB, Gateway, Subscribers.
 
 ### Description
 
-It was observed that AGW is not able to check-in to Orchestrator as described in the [Configure Access Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw) docs.
+It was observed that AGW is not able to check-in to Orchestrator as described in the [Configure Access Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw.md) docs.
 
 ### Why is this important?
 

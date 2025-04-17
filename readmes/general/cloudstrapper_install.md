@@ -194,10 +194,10 @@ ansible-playbook agw-provision.yaml --tags createGw -e '@<path to parameters fil
 
 ## Configure AGW and Orchestrator
 
-- Configure AGW [manually](https://magma.github.io/magma/docs/lte/config_agw) or through the playbooks running agw-configure from the Bridge node.
+- Configure AGW [manually](https://magma.github.io/magma/docs/lte/config_agw.md) or through the playbooks running agw-configure from the Bridge node.
 - Start by configuring the Bridge node as a bastion host. Using the Bridge node as Bastion host, configure the newly deployed AGW to communicate with the Orc8r.
-- Follow the following steps [here](https://magma.github.io/magma/docs/orc8r/deploy_install) to create an admin user for NMS.
-- Generate a challenge key and hardware id and add it to Orc8r from the [Magmacore website documentation](https://magma.github.io/magma/docs/lte/deploy_config_agw).
+- Follow the following steps [here](https://magma.github.io/magma/docs/orc8r/deploy_install.md) to create an admin user for NMS.
+- Generate a challenge key and hardware id and add it to Orc8r from the [Magmacore website documentation](https://magma.github.io/magma/docs/lte/deploy_config_agw.md).
 
 ## Custom AGWs for Snowcone
 

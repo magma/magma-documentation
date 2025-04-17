@@ -9,7 +9,7 @@ original_id: configure_federation
 
 ## Basic Configuration Steps
 
-For Basic installation instructions follow "[Installing Federation Gateway](../feg/deploy_install)"
+For Basic installation instructions follow "[Installing Federation Gateway](../feg/deploy_install.md)"
 
 There are a few configuration steps that are not yet exposed in NMS that must be done manually via the REST API.
 
