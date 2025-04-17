@@ -26,4 +26,4 @@ jobs:
       - name: Run reference check
         run: |
           pip install --upgrade pip
-          python ./scripts/check_doc_references.py
+          python ../scripts/check_doc_references.py
