@@ -17,7 +17,7 @@ gateway to serve as a secondary to a primary gateway running at an edge site.
 
 Steps:
 
-1. Download packer onto your host machine at <https://www.packer.io/downloads.html>
+1. Download packer onto your host machine at https://www.packer.io/downloads.html
 2. Run the following
 
 ```text
@@ -125,7 +125,7 @@ service magma@* status
 
 ### Access Gateway Configuration
 
-1. Follow the [configuration steps](https://magma.github.io/magma/docs/lte/deploy_config_agw) to register the new gateway.
+1. Follow the [configuration steps](https://magma.github.io/magma/docs/lte/deploy_config_agw.md) to register the new gateway.
 2. To configure the gateway to serve as a secondary use the Orc8r API (NMS does
 not currently support this functionality).
     1. Use the POST request endpoint `/lte/{network_id}/gateway_pools` to

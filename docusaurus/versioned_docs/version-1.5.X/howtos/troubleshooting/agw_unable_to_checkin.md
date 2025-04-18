@@ -6,7 +6,7 @@ original_id: agw_unable_to_checkin
 ---
 # Access Gateway Unable to Check-in to Orchestrator
 
-**Description:** After deploying AGW and Orchestrator, it is time to make AGW accessible from Orchestrator. After following github Magma AGW configuration [guide](../../lte/deploy_config_agw), it was observed that AGW is not able to check-in to Orchestrator.
+**Description:** After deploying AGW and Orchestrator, it is time to make AGW accessible from Orchestrator. After following github Magma AGW configuration [guide](../../lte/deploy_config_agw.md), it was observed that AGW is not able to check-in to Orchestrator.
 
 **Environment:** AGW and Orc8r deployed.
 
@@ -98,4 +98,5 @@ rootca_cert: /var/opt/magma/tmp/certs/rootCA.pem
 AGW$ sudo service magma@magmad restart
 ```
 
-11. If issue still persists, please  file github issues or ask in our support channels <https://magmacore.org/join-the-open-source-community/>
+11. If issue still persists, please  file github issues or ask in our support channels https://magmacore.org/join-the-open-source-community/
+

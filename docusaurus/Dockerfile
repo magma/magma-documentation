@@ -9,9 +9,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM node:14
+FROM node:20-alpine AS base
 
-WORKDIR /app/website
+WORKDIR /
 
-COPY package.json /app/website/package.json
-RUN yarn install
+# Copy package.json first
+COPY docker.package.json ./package.json
+
+# Check if package-lock.json exists, if not, generate it
+RUN [ -f package-lock.json ] || npm install --package-lock-only
+
+# Copy package-lock.json only if it exists
+COPY package-lock.json* ./
+
+# Install dependencies
+RUN npm ci || npm install
+
+COPY . .
+
+# Development stage
+FROM base AS development
+CMD ["npm", "run", "start"]

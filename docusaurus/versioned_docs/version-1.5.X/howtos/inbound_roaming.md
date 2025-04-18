@@ -38,7 +38,7 @@ Local Non-Federated + Roaming case (one roaming agreement). As you can see in
 the picture below, VPN is suggested to reach to the user plane at the remote
 PGW.
 
-![Magma events table](assets/feg/inbound_roaming_architecture_non_federated.png?raw=true "Non-Federated Inbound Roaming")
+![Magma events table](../../../../readmes/assets/feg/inbound_roaming_architecture_non_federated.png?raw=true "Non-Federated Inbound Roaming")
 
 Other configurations like SubscriberDB with PCRF/OCS to handle local
 subscribers may also work but are not tested yet.
@@ -52,7 +52,7 @@ setup to handle your own/local subscribers. So before configuring Inbound
 Roaming you need:
 - Install [Or8cr](https://magma.github.io/magma/docs/orc8r/architecture_overview),
 - Install [Federatetion Gateway](https://magma.github.io/magma/docs/feg/deploy_intro) and,
-- Install [Access Gateway](https://magma.github.io/magma/docs/lte/setup_deb).
+- Install [Access Gateway](https://magma.github.io/magma/docs/lte/setup_deb.md).
 - Create a Federate Deployment (see [below](#Create a Federated Deployment)).
 - Make sure your setup is able to serve calls with your local subscribers
 
@@ -322,4 +322,4 @@ both subscriber db and HSS and roaming subscribers:
 - Rest of PLMN: MME forwards any other PLMN to be authenticated through the
   FeG. In the orc8r they are forwarded to the local FeG network `terravm_feg_network`
 
-[[inbound_roaming_sample.zip]](assets/feg/inbound_roaming_sample.zip)
+[[inbound_roaming_sample.zip]](../../../../readmes/assets/feg/inbound_roaming_sample.zip)

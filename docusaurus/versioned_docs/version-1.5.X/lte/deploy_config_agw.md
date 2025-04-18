@@ -12,14 +12,14 @@ original_id: deploy_config_agw
 Before beginning to configure your Magma Access Gateway, you will need to make
 sure that it is running all services without crashing. You will also need a
 working Orchestrator setup. Please follow the instructions in
-"[Deploying Orchestrator](../orc8r/deploy_intro)" for a
+"[Deploying Orchestrator](../orc8r/deploy_intro.md)" for a
 successful Orchestrator installation.
 
 You will need to set up a super-user in a valid NMS Organization in order to
-use the NMS. See "[NMS Multitenancy](../nms/nms_organizations)"
+use the NMS. See "[NMS Multitenancy](../nms/organizations.md)"
 to complete this step.
 
-You also should have completed all the steps in "[Install Access Gateway (On Bare Metal)](deploy_install)".
+You also should have completed all the steps in "[Install Access Gateway (On Bare Metal)](deploy_install.md)".
 For this part, we strongly recommend that you SSH into the AGW box from a host
 machine instead of using the AGW directly.
 
@@ -73,7 +73,7 @@ is a fresh Orchestrator install, you will be prompted to create your first
 network. Otherwise, select "Create Network" from the network selection icon
 at the bottom of the left sidebar.
 
-![Creating a network](assets/nms/createnetwork_12.png)
+![Creating a network](../../../../readmes/assets/nms/createnetwork_12.png)
 
 Fill out the network creation modal with the parameters that you want. There
 are 3 steps in the modal window, but the network will be created after you hit

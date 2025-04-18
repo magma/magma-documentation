@@ -24,7 +24,7 @@ There are two option to enable header enrichment:
    ```
    he_enabled: true
    ```
-2. Enable via '/LTE/{Network-id}/{Gateway-id}/' API
+2. Enable via `/LTE/{Network-id}/{Gateway-id}/` API
    You would need to define following parameters for Header enrichment under 'cellular' parameter.
    ```
    "he_config": {
@@ -97,7 +97,7 @@ Following example show required parameters for Header enrichment rule.
 
 ## 3. Apply the policy to subscribers
 Now apply the rule to subscribers. This can be using by
-'/LTE/{network-ID}/Subscribers/{subscriber-id}/' API
+`/LTE/{network-ID}/Subscribers/{subscriber-id}/` API
 
 ```
 "active_policies": [
