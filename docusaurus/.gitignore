@@ -50,3 +50,5 @@
 # Ignore any package-lock or yarn.lock if using a different package manager
 # Uncomment the one you're not using
 **/yarn.lock
+
+package-lock.json

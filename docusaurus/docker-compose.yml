@@ -1,21 +1,46 @@
 version: '3.8'
+name: "docusaurus"
 
 services:
-  docusaurus-dev:
+  dev:
     build:
       context: .
-      target: development
-      cache_from:
-        - docusaurus-dev
-    container_name: docusaurus_dev
+      target: dev
+    container_name: docusaurus_local
     ports:
-      - "3000:3000"
+      - "3000:3000"      
     volumes:
-      - ./../docusaurus:/app/website
-      - ./../readmes:/app/docs
-
-      - .:/app
-      - /app/node_modules
+      - .:/opt/docusaurus
+      - ./../readmes:/opt/docusaurus/docs
     environment:
       - NODE_ENV=development
-    command: npm run start
+
+  serve: # TODO: fix issues
+    build:
+      context: .
+      target: serve
+    container_name: docusaurus
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  caddy: # TODO: fix issues
+    build:
+      context: .
+      target: caddy
+    container_name: docusaurus_caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=production
+      - DOCUSAURUS_DOMAIN=docusaurus.example
+      - DOCUSAURUS_EMAIL=letsencrypt@docusaurus.example
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

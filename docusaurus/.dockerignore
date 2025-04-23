@@ -1,5 +1,3 @@
 # Local development files
-**/node_modules
-**/package.json
-**/package-lock.json
+node_modules
 **/yarn.lock
