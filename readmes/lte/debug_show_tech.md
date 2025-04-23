@@ -22,7 +22,7 @@ sudo ansible-playbook show-tech.yml
 ansible-pull -U https://github.com/magma/magma.git show-tech/show-tech.yml -d /tmp/show-tech --purge
 ```
 
-The captured output is dumped in `/tmp/magma_reports/report.magma.<date>.tgz`
+The captured output is dumped in `/tmp/magma_reports/report.magma.\<date\>.tgz`
 
 ### What is collected upon running show-tech ?
 
@@ -63,7 +63,7 @@ Currently, show-tech tool collects the following information and packages them i
 
 The show-tech tool is built using ansible playbooks that are located on the magma github repo. We currently provide the following playbooks:
 
-1. install_prereq.yml - to be run once on host to upgrade ansible version to > 2.9.0
+1. install_prereq.yml - to be run once on host to upgrade ansible version to \> 2.9.0
 2. show-tech.yml - the state collection playbook. It is responsible for collecting all state and packaging the all files into one .tar.gz file.
 3. constants.yml - is the constants file and includes all files we collect, as well as all commands we run and gather their outputs. The role that reads all constants is `load_vars` as can be seen in show-tech playbook.
 
@@ -82,7 +82,7 @@ paths_to_collect:
   - "/var/log/syslog"
   - "/var/log/MME.*"
   - "/var/log/enode.*"
- **** **- "/var/core/*"** **** << Add the new file/path here
+ **** **- "/var/core/*"** **** \<\< Add the new file/path here
 ```
 
 ### How to add a new command output to be included in the destination ?
@@ -106,12 +106,12 @@ debian_commands:
   - "journalctl -u magma@*"
   - "timeout 60 sudo tcpdump -i any sctp -w {{report_dir_output.stdout}}/sctp.pcap"
   - "timeout 60 sudo tcpdump -i any port 48080 -w {{report_dir_output.stdout}}/any-48080.pcap"
-  - "ps aux" <<< Add the new command here
+  - "ps aux" \<\<\< Add the new command here
 ```
 
 ### How to add a new role ?
 
-Roles include tasks that can be built-in ansible modules or community ones. In this example we will look into the role that collects files already set in the variable called “*paths_to_collect*”. This uses a built-in module to work with the specified files. (<https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html>)
+Roles include tasks that can be built-in ansible modules or community ones. In this example we will look into the role that collects files already set in the variable called “*paths_to_collect*”. This uses a built-in module to work with the specified files. (\<https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html\>)
 *NOTE*: *report_dir_output.stdout* is the variable containing the dynamic report dir to be used across all roles and is being created on role *destdir.*
 
 ```yaml
@@ -136,7 +136,7 @@ Roles include tasks that can be built-in ansible modules or community ones. In t
 On the AGW host, clone your PR and upgrade ansible. Run the following as root
 
 ```bash
-$ git clone https://github.com/<your_github_user>/magma.git -b YOUR_BRANCH
+$ git clone https://github.com/\<your_github_user\>/magma.git -b YOUR_BRANCH
 $ cd magma/show-tech/
 $ ansible-playbook install_prereq.yml
 
@@ -164,4 +164,4 @@ grep "Command:" -A 3 report.magma.2020-11-29T14:21:42Z/commands_output.log
 
 ## References
 
-<https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html> - all ansible modules by category. <https://docs.ansible.com/ansible/2.8/user_guide/playbooks.html> - ansible user guide on playbooks.
+\<https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html\> - all ansible modules by category. \<https://docs.ansible.com/ansible/2.8/user_guide/playbooks.html\> - ansible user guide on playbooks.

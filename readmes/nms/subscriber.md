@@ -58,7 +58,7 @@ auth key and auth_opc should be specified as hex. The service state can be eithe
 and active APN can be chosen based on what is available.
 
 For example,
-John, IMSI001010000000079,<auth_key>,<auth_opc>,ACTIVE,default,oai_ipv4
+John, IMSI001010000000079,\<auth_key\>,\<auth_opc\>,ACTIVE,default,oai_ipv4
 
 ### Provisioning
 

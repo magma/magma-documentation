@@ -4,7 +4,7 @@ Author(s): [@arsenii-oganov]
 
 Last updated: 03/07/2022
 
-Link to issue: <https://github.com/magma/magma/issues/11636>
+Link to issue: \<https://github.com/magma/magma/issues/11636\>
 
 ## 1.0 Objectives
 
@@ -27,7 +27,7 @@ Session telemetry - database stores information about all sessions for all netwo
 CDR engine runs CDF (Charging Data Function)
 Bx - 3GPP integration reference points
 CDR Gateway - Persistent CDR storage
-Sessiond enhancements and Session telemetry creation functions are covered inside different proposal (Settlement service, <https://github.com/magma/magma/issues/11166>) and here assumed to be fully implemented.
+Sessiond enhancements and Session telemetry creation functions are covered inside different proposal (Settlement service, \<https://github.com/magma/magma/issues/11166\>) and here assumed to be fully implemented.
 
 ### 3.2 CDR engine
 

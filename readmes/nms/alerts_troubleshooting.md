@@ -10,7 +10,7 @@ hide_title: true
 
 ### Description
 
-S1 setup connections are failing within network <network_id>, which means that the eNodeBs are not able to get provisioned with this network.
+S1 setup connections are failing within network \<network_id\>, which means that the eNodeBs are not able to get provisioned with this network.
 
 ### Why is this important?
 
@@ -19,17 +19,17 @@ It is one of the key KPI and may impact network deployment/expansion/operations 
 ### Automated recommendation
 
 1. Check the Orchestrator pods and make sure that they are ok. A basic check to ensure that there is no issue in Orchestrator, specifically in terms of logging.
-2. Check the s1_set metric on NMS -> Metrics -> Grafana -> Networks -> S1 Setup (1h increase) to verify. You may further check any additional metrics in Grafana as well.
-3. Navigate to NMS -> Dashboard, to check for any relevant alerts or events.
-4. Navigate to NMS -> Network, to observe that all EPC and RAN parameters are ok as intended.
-5. Navigate to NMS -> Equipment -> Gateways, to check if any Gateway is in ‘Bad’ health which is supposed to be ok.
-6. Navigate to NMS -> Equipment -> eNodeB, to check if any eNodeB is in ‘Disconnected’ state. Determine which AGW it belongs to. It may be good indication of any faulty AGW.
+2. Check the s1_set metric on NMS -\> Metrics -\> Grafana -\> Networks -\> S1 Setup (1h increase) to verify. You may further check any additional metrics in Grafana as well.
+3. Navigate to NMS -\> Dashboard, to check for any relevant alerts or events.
+4. Navigate to NMS -\> Network, to observe that all EPC and RAN parameters are ok as intended.
+5. Navigate to NMS -\> Equipment -\> Gateways, to check if any Gateway is in ‘Bad’ health which is supposed to be ok.
+6. Navigate to NMS -\> Equipment -\> eNodeB, to check if any eNodeB is in ‘Disconnected’ state. Determine which AGW it belongs to. It may be good indication of any faulty AGW.
 
 ### Troubleshooting steps
 
 1. If any Orchestrator pods has some issue, please try to resolve that first.
 2. Make sure that Gateways are successfully checking in. If they are not checked-in, means that their metrics won’t be reported. Please follow [these steps](https://magma.github.io/magma/docs/howtos/troubleshooting/agw_unable_to_checkin) to troubleshoot.
-3. Perform relevant sync/changes if any update has been performed on NMS -> Network.
+3. Perform relevant sync/changes if any update has been performed on NMS -\> Network.
 4. Make sure that configuration for [Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw.md), [eNodeB](https://magma.github.io/magma/docs/lte/deploy_config_enodebd) and [APN](https://magma.github.io/magma/docs/lte/deploy_config_apn) has been followed.
 5. If any faulty Gateway has been identified, please consider rebooting _enodebd_ service. Please consider rebooting the device (this should be done in minimal traffic duration) if need be.
 6. If still not resolved, then capture trace on eth1 interface on issue Gateway(s) to identify the case. Try to analyze and identify the cause. This will give an indication of any parameter inserted by eNodeB causing the issue.
@@ -57,7 +57,7 @@ Network, eNodeB, Gateway, Subscribers.
 
 ### Description
 
-S1 setup connections are failing within network <network_id>, which means that the eNodeBs are not able to get provisioned with this network.
+S1 setup connections are failing within network \<network_id\>, which means that the eNodeBs are not able to get provisioned with this network.
 
 ### Why is this important?
 
@@ -65,20 +65,20 @@ Subscribers will not be able to access the services.
 
 ### Automated recommendation
 
-1. Please check NMS -> Metrics -> Grafana (Network & Gateway) to verify and check additional metrics.
-2. Navigate to NMS -> Dashboard, to check for any relevant alerts or events.
-3. Navigate to NMS -> Network, to observe that all EPC and RAN parameters are ok as intended.
-4. Navigate to NMS -> Equipment -> Gateways, to check if any Gateway is in ‘Bad’ health which is supposed to be ok and UE are coming under this Gateway or any other Gateway. This will narrow us down to issue Gateway.
-5. Navigate to NMS -> Equipment -> eNodeB, to check if any eNodeB is in ‘Disconnected’ state.
+1. Please check NMS -\> Metrics -\> Grafana (Network \& Gateway) to verify and check additional metrics.
+2. Navigate to NMS -\> Dashboard, to check for any relevant alerts or events.
+3. Navigate to NMS -\> Network, to observe that all EPC and RAN parameters are ok as intended.
+4. Navigate to NMS -\> Equipment -\> Gateways, to check if any Gateway is in ‘Bad’ health which is supposed to be ok and UE are coming under this Gateway or any other Gateway. This will narrow us down to issue Gateway.
+5. Navigate to NMS -\> Equipment -\> eNodeB, to check if any eNodeB is in ‘Disconnected’ state.
 6. Check all the services in corresponding Gateway(s) under which issue is been reported.
 
 ### Troubleshooting steps
 
-1. Perform relevant sync/changes if any update has been performed on NMS -> Network.
+1. Perform relevant sync/changes if any update has been performed on NMS -\> Network.
 2. Make sure that configuration for [Gateway](https://magma.github.io/magma/docs/lte/deploy_config_agw.md), [eNodeB](https://magma.github.io/magma/docs/lte/deploy_config_enodebd) and [APN](https://magma.github.io/magma/docs/lte/deploy_config_apn) has been followed.
 3. Please follow troubleshooting steps from [here](https://magma.github.io/magma/docs/howtos/troubleshooting/user_unable_to_attach) for issue Gateway. Please note the error code.
 4. Please check mme logs, verify if the service request failures are coming from a specific user/device/model/firmware.
-5. You may use PromQL _ue_attach{networkID=&lt;NetworkID>,result="failure"}_ to isolate further.
+5. You may use PromQL `_ue_attach{networkID=<;NetworkID>,result="failure"}` to isolate further.
 6. If required, please consider rebooting the problematic device (this should be done in minimal traffic duration).
 7. If still not resolved, then capture trace on eth1 interface on issue Gateway(s) to identify the case.
 8. If issue persists then get higher level support by providing relevant traces/logs and [additional files](https://magma.github.io/magma/docs/lte/debug_show_tech). Report issue with eNodeB (vendor, firmware etc) and Magma node details along with any issue found in step 6.
@@ -114,8 +114,8 @@ Visibility of AGW will be lost. That means admins cannot perform AGW related con
 
 ### Automated recommendation
 
-1. Navigate to NMS -> Dashboard, to check for any relevant alerts or events.
-2. Navigate to NMS -> Equipment -> Gateways -> Click on issue AGW to check overview, events, logs etc.
+1. Navigate to NMS -\> Dashboard, to check for any relevant alerts or events.
+2. Navigate to NMS -\> Equipment -\> Gateways -\> Click on issue AGW to check overview, events, logs etc.
 3. Login to AGW and run `sudo checkin_cli.py.`
 4. To checkout further logs, you may run `journalctl -u magma@magmad -f.`
 
@@ -154,8 +154,8 @@ Impacts the new radio deployment.
 
 ### Automated recommendation
 
-1. Navigate to NMS -> Dashboard, to check for any relevant alerts or events.
-2. Navigate to NMS -> Equipment -> eNodeB-> Click on issue eNodeB to check overview and config.
+1. Navigate to NMS -\> Dashboard, to check for any relevant alerts or events.
+2. Navigate to NMS -\> Equipment -\> eNodeB-\> Click on issue eNodeB to check overview and config.
 3. Login to AGW:
    1. Check that enodebd service is running (for certified eNodeB).
    2. Check dnsd logs to observe if IP address has been assigned to eNodeB.
@@ -210,7 +210,7 @@ In AGW use `sudo checkin_cli.py` to test the Orc8r connection, verify the correc
 
 In AGW, use `sudo service magma@* status`  to verify the services are active in AGW. Services like `magmad, eventd` and `td-agent-bit` are important for reporting metrics, events and logs.
 
-In AGW,  verify metrics are being generated using `service303_cli.py metrics &lt;service>.` For example,  `service303_cli.py metrics magmad`
+In AGW,  verify metrics are being generated using `service303_cli.py metrics <;service>.` For example,  `service303_cli.py metrics magmad`
 
 #### Cause 4: Unhealthy services in Orc8r
 
@@ -321,7 +321,7 @@ An inactive UE in Idle state is unable to get activated to handle new traffic
 Verify if the service request failures are coming from new error code
 
 ```promql
-service_request{networkID=<NetworkID>,result="failure"}
+service_request{networkID=\<NetworkID\>,result="failure"}
 ```
 
 #### Cause 2: Rejects coming from a single user
@@ -331,7 +331,7 @@ From mme logs, verify if the service request failures are coming from a single u
 #### Cause 3: Rejects coming from a single AGW
 
 Verify if service request failures have increased due to a specific AGW. Verify the configuration/version compared to other AGW. You can use the following PromQL to isolate the AGW \
-`service_request{networkID=&lt;NetworkID>,result="failure"}`
+`service_request{networkID=\<;NetworkID\>,result="failure"}`
 
 ### Causes / Effects/ Solutions
 

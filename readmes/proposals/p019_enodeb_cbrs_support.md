@@ -10,7 +10,7 @@ Author(s): [@amarpad]
 
 Last updated: [07/20/2021]
 
-Discussion at <https://github.com/magma/magma/issues/8196>.
+Discussion at \<https://github.com/magma/magma/issues/8196\>.
 
 ## Context & scope
 

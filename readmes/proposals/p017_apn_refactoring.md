@@ -48,12 +48,12 @@ Currently two main issues exists in the way APNs are handled
 - Subscriberdb holds the APN config for each subscriber as it gets streamed down from the orc8r.
 - During subscriber session set up, we have two distinct workflows
 
-1. Configure APN transport configuration into OVS((MME <-> Mobilityd <-> Subscriberdb)
+1. Configure APN transport configuration into OVS((MME \<-\> Mobilityd \<-\> Subscriberdb)
 
 - Mobilityd gets APN resource config from subscriberdb and passes transport information to MME.
 - MME controller pushes this vlan tagging information to OVS(table 0)
 
-1. Configure APN QOS information into OVS (PolicyDB, MME <-> Sessiond <-> Pipelined)
+1. Configure APN QOS information into OVS (PolicyDB, MME \<-\> Sessiond \<-\> Pipelined)
     1. MME pushes APN AMBR information to sessiond
     2. PolicyDB pushes per subscriber APN specific rules to sessiond
     3. Sessiond combines both this information and builds the flow request to pipelined
@@ -63,7 +63,7 @@ Currently two main issues exists in the way APNs are handled
 
 - Add new transport level entity which encapsulates the data network information specific to each gateway and refactor "apn_resource" and rename "apn_resource" → "gateway_apn_config"
 - Add APN DB servicer on the Orc8r to provide APN specific configs. This will include both network level and gateway level configs.
-- Add APN DB client on ConfigDB(rename subscriberDB -> ConfigDB) and periodically poll apn configs from Orc8r and store locally on sqlite db.
+- Add APN DB client on ConfigDB(rename subscriberDB -\> ConfigDB) and periodically poll apn configs from Orc8r and store locally on sqlite db.
 - Refactor mme and enhance pipelined code to get transport level configs from subscriberdb and directly program APN transport information through pipelined.
 
 ## **API changes**
@@ -151,5 +151,5 @@ We have two options to implement this, we will choose it depending on time in 1.
 
 ## **References**
 
-- <https://gist.github.com/karthiksubraveti/0daee7f5446cc72460497e247d427ee6>
-- _<https://raw.githubusercontent.com/magma/magma/d691319dd40e0a7d2822a993f819beca7490e65d/docs/readmes/lte/Attach_call_flow_in_Magma.txt>_
+- \<https://gist.github.com/karthiksubraveti/0daee7f5446cc72460497e247d427ee6\>
+- _\<https://raw.githubusercontent.com/magma/magma/d691319dd40e0a7d2822a993f819beca7490e65d/docs/readmes/lte/Attach_call_flow_in_Magma.txt\>_

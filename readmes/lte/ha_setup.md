@@ -16,7 +16,7 @@ gateway to serve as a secondary to a primary gateway running at an edge site.
 
 Steps:
 
-1. Download packer onto your host machine at <https://www.packer.io/downloads.html>
+1. Download packer onto your host machine at \<https://www.packer.io/downloads.html\>
 2. Run the following
 
 ```text
@@ -36,8 +36,8 @@ subnet/vpc which the box is launched into while building.
 The result should show
 
 ```text
-==> Builds finished. The artifacts of successful builds are:
---> amazon-ebs: AMIs were created:
+==\> Builds finished. The artifacts of successful builds are:
+--\> amazon-ebs: AMIs were created:
 us-west-1: ami-0f1c9db5a767a0296
 ```
 
@@ -105,13 +105,13 @@ the instance summary.
 2. Add the AWS gateway key that was created when the instance was launched:
 `ssh-add ~/.ssh/aws_key.pem`
 3. SSH to EC2 instance using the public IP from step 1:
-`ssh admin@<instance_public_ip>`
+`ssh admin@\<instance_public_ip\>`
 4. Now install Magma
 
 ```text
-[admin@<public_ip>~/] sudo su
-[root@<public_ip>:/home/admin] wget https://raw.githubusercontent.com/facebookincubator/magma/v1.4/lte/gateway/deploy/agw_install.sh
-[root@<public_ip>:/home/admin] bash agw_install cloud
+[admin@\<public_ip\>~/] sudo su
+[root@\<public_ip\>:/home/admin] wget https://raw.githubusercontent.com/facebookincubator/magma/v1.4/lte/gateway/deploy/agw_install.sh
+[root@\<public_ip\>:/home/admin] bash agw_install cloud
 `
 ```
 

@@ -134,4 +134,4 @@ The Initial plan is to use eBPF for enforcement rules. PipelineD would determine
     - Per CPU data structures
 - Efficient use of XDP
 
-[1] <https://docs.cilium.io/en/v1.11/bpf/>
+[1] \<https://docs.cilium.io/en/v1.11/bpf/\>

@@ -145,7 +145,7 @@ This is the scope for version 1.
 4. Tunnel device would be L3 tunnel
 5. Uplink QoS would not work due to use of skb-mark, IPSec also utilizes
    skb-mark.
-6. IPSec would be only supported on ubuntu and kernel (> 4.14).
+6. IPSec would be only supported on ubuntu and kernel (\> 4.14).
 
 [1] `https://www.wireguard.com/performance/`
-    <https://core.ac.uk/download/pdf/322886318.pdf>
+    \<https://core.ac.uk/download/pdf/322886318.pdf\>

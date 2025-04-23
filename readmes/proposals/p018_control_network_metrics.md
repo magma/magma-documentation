@@ -79,7 +79,7 @@ traffic will be observed. This port and other information related to Magma
 services can be read from the
 [`ServiceRegistry`](https://sourcegraph.com/github.com/magma/magma@v1.6.0/-/blob/orc8r/gateway/python/magma/common/service_registry.py).
 On other interfaces (see [Open Issues](#open-issues)), all traffic will be
-observed. `task->comm` from the kernel will be used to identify the binary
+observed. `task-\>comm` from the kernel will be used to identify the binary
 triggering traffic. In case of Python services, the binary name is `python3` so
 command line arguments (e.g. `magma.main.subscriberdb`) will be used to infer
 the source service name.
@@ -109,7 +109,7 @@ Now we show a prototype of the eBPF program `kernsnoopd` will use:
 #include <net/sock.h>
 
 struct key_t {
-  // binary name (task->comm in the kernel)
+  // binary name (task-\>comm in the kernel)
   char comm[TASK_COMM_LEN];
   u32 pid;
   // source port and destination IP address, port
@@ -122,7 +122,7 @@ BPF_HASH(dest_counters, struct key_t);
 
 // Attach kprobe for the `tcp_sendmsg` syscall
 int kprobe__tcp_sendmsg(struct pt_regs *ctx, struct sock *sk, struct msghdr *msg, size_t size) {
-  u16 dport = 0, family = sk->__sk_common.skc_family;
+  u16 dport = 0, family = sk-\>__sk_common.skc_family;
 
   // only IPv4
   if (family == AF_INET) {
@@ -130,9 +130,9 @@ int kprobe__tcp_sendmsg(struct pt_regs *ctx, struct sock *sk, struct msghdr *msg
 
     // read binary name, pid, source and destination IP address and port
     bpf_get_current_comm(key.comm, TASK_COMM_LEN);
-    key.pid = bpf_get_current_pid_tgid() >> 32;;
-    key.daddr = sk->__sk_common.skc_daddr;
-    dport = sk->__sk_common.skc_dport;
+    key.pid = bpf_get_current_pid_tgid() \>\> 32;;
+    key.daddr = sk-\>__sk_common.skc_daddr;
+    dport = sk-\>__sk_common.skc_dport;
     key.dport = ntohs(dport);
 
     // increment the counters
@@ -416,26 +416,26 @@ of the slow callback function.
 
 [1]: Jay Schulist, Daniel Borkmann, Alexei Starovoitov. 2018. Linux Socket
 Filtering aka Berkeley Packet Filter (BPF).
-<https://www.kernel.org/doc/Documentation/networking/filter.txt>
+\<https://www.kernel.org/doc/Documentation/networking/filter.txt\>
 
 [2]: yonghong-song. 2020. Netqtop 3037.
-<https://github.com/iovisor/bcc/pull/3048>
+\<https://github.com/iovisor/bcc/pull/3048\>
 
 [3]: Brendan Gregg. 2018. TCP Tracepoints.
-<https://www.brendangregg.com/blog/2018-03-22/tcp-tracepoints.html>
+\<https://www.brendangregg.com/blog/2018-03-22/tcp-tracepoints.html\>
 
-[4]: pflua-bench. 2016. <https://github.com/Igalia/pflua-bench>
+[4]: pflua-bench. 2016. \<https://github.com/Igalia/pflua-bench\>
 
 [5]: Alexei Starovoitov. 2014. net: filter: rework/optimize internal BPF
 interpreter's instruction set.
-<https://www.kernel.org/doc/Documentation/networking/filter.txt>
+\<https://www.kernel.org/doc/Documentation/networking/filter.txt\>
 
 [6]: Alexei Starovoitov. 2019. bpf: introduce bounded loops.
-<https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git/commit/?id=2589726d12a1b12eaaa93c7f1ea64287e383c7a5>
+\<https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git/commit/?id=2589726d12a1b12eaaa93c7f1ea64287e383c7a5\>
 
 [7]: Quentin Monnet. 2021. eBPF Updates #4: In-Memory Loads Detection,
 Debugging QUIC, Local CI Runs, MTU Checks, but No Pancakes.
-<https://ebpf.io/blog/ebpf-updates-2021-02>
+\<https://ebpf.io/blog/ebpf-updates-2021-02\>
 
 [8]: Ivan Babrou. 2018. eBPF overhead benchmark.
-<https://github.com/cloudflare/ebpf_exporter/tree/master/benchmark>
+\<https://github.com/cloudflare/ebpf_exporter/tree/master/benchmark\>

@@ -111,7 +111,7 @@ Ingested ~25M datapoints/minute while using on average 1GB of memory, and about
 
 I had to do a tiny bit of tuning to some command line flags to get up to 25M
 and more tuning could be done to get it higher most likely given that it was
-only using <200% CPU.
+only using \<200% CPU.
 
 Based on VM’s data this capacity should scale nearly linearly for quite a
 while with more/faster CPUs.
@@ -192,6 +192,6 @@ Prometheus
 
 Migrating data for existing deployments is also simple.
 
-- <https://medium.com/@romanhavronenko/victoriametrics-how-to-migrate-data-from-prometheus-d44a6728f043>
+- \<https://medium.com/@romanhavronenko/victoriametrics-how-to-migrate-data-from-prometheus-d44a6728f043\>
 - Write a simple script to take a snapshot of the prometheus data, and use an
   init-container to load this data into the new VM server before the upgrade.

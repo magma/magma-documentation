@@ -36,7 +36,7 @@ An alert Receiver is created to push the alert notification in real time so that
 
 #### Generate Slack Webhook URL
 
-- Create an App: Go to <https://api.slack.com/apps?new_app=1> and click on “Create New App”. Enter the App Name and the Slack Workspace.
+- Create an App: Go to \<https://api.slack.com/apps?new_app=1\> and click on “Create New App”. Enter the App Name and the Slack Workspace.
 - Click on “Incoming Webhooks” and change “Active Incoming Webhooks” to On
 
     ![alert_recv1](../assets/nms/userguide/alerts/alert_recv1.png)
@@ -75,7 +75,7 @@ Magma NMS comes loaded with some default set of alert rules. These default rules
 
 Currently predefined alerts configure following alerts
 
-- CPU percent on the gateway is running > 75% in last 5 minutes
+- CPU percent on the gateway is running \> 75% in last 5 minutes
 - Unsuccessful S1 setup in last 5 minutes
 - S6A authorization failures in last 5 minutes
 - Upon exceptions when bootstrapping a gateway in last 5 minutes
@@ -83,7 +83,7 @@ Currently predefined alerts configure following alerts
 - When a UE attach resulted in a failure in last 5 minutes
 - When there were any service restarts in last 5 minutes
 
-> Note Operator will have to go and additionally specify the receiver in each of these alerts when they want to be notified of the alerts as follows
+\> Note Operator will have to go and additionally specify the receiver in each of these alerts when they want to be notified of the alerts as follows
 
 ![alerts3](../assets/nms/userguide/alerts/alerts3.png)
 
@@ -129,7 +129,7 @@ This alert will fire if eNB Rf Tx is down in any of the gateways in your network
 Expression:
 
 ```promql
-sum by(gatewayID) (enodeb_rf_tx_enabled{networkID="<your network ID>"} < 1)
+sum by(gatewayID) (enodeb_rf_tx_enabled{networkID="\<your network ID\>"} \< 1)
 ```
 
 Duration:
@@ -139,25 +139,25 @@ Duration:
 
 This alert will fire if the connected eNB count falls to ‘0’ for any of the gateways in your network.
 
-Simple: Select “enb_connected” metric from the dropdown and construct the if statement as **“if enb_connected < 1”**
+Simple: Select “enb_connected” metric from the dropdown and construct the if statement as **“if enb_connected \< 1”**
 
 Advanced Expression:
 
 ```promql
-enb_connected{networkID="<your network ID>"} < 1
+enb_connected{networkID="\<your network ID\>"} \< 1
 ```
 
 Duration:
 5 minutes
 
-#### Free Memory is < 10 Alert
+#### Free Memory is \< 10 Alert
 
 This alert will fire if the free memory of any of the gateways in your network is less than 10%
 
 Advanced Expression:
 
 ```promql
-((1 - avg_over_time(mem_available{networkID="mpk_dogfooding"}[5m]) / avg_over_time(mem_total{networkID="mpk_dogfooding"}[5m])) * 100) > 90
+((1 - avg_over_time(mem_available{networkID="mpk_dogfooding"}[5m]) / avg_over_time(mem_total{networkID="mpk_dogfooding"}[5m])) * 100) \> 90
 ```
 
 Duration:
@@ -166,11 +166,11 @@ Duration:
 #### High Disk Usage Alert
 
 This alert will fire if the disk usage of any of the gateways in your network is more than 80%
-Simple Way: Select “disk*_percent*” metric from the dropdown and construct the if statement as **“if disk*_percent* > 80”**
+Simple Way: Select “disk*_percent*” metric from the dropdown and construct the if statement as **“if disk*_percent* \> 80”**
 Advanced Expression:
 
 ```promql
-(disk_percent{networkID="<your network ID>"}) > 80
+(disk_percent{networkID="\<your network ID\>"}) \> 80
 ```
 
 Duration:
@@ -182,7 +182,7 @@ This alert will fire if the attach success rate of any of the gateways in your n
 Expression:
 
 ```promql
-(sum by(gatewayID) (increase(ue_attach{action="attach_accept_sent",networkID="<your network ID>"}[3h]))) * 100 / (sum by(gatewayID) (increase(ue_attach{action=~"attach_accept_sent|attach_reject_sent|attach_abort",networkID="<your network ID>"}[3h]))) < 50
+(sum by(gatewayID) (increase(ue_attach{action="attach_accept_sent",networkID="\<your network ID\>"}[3h]))) * 100 / (sum by(gatewayID) (increase(ue_attach{action=~"attach_accept_sent|attach_reject_sent|attach_abort",networkID="\<your network ID\>"}[3h]))) \< 50
 ```
 
 Duration:
@@ -200,7 +200,7 @@ This alert will fire if for any of the gateway in your network, the User Plane t
 Expression:
 
 ```promql
-(sum by(gatewayID) (((rate(pdcp_user_plane_bytes_dl{networkID="<your network ID>"}[1h])) - (rate(pdcp_user_plane_bytes_dl{networkID="<your network ID>"}[1h] offset 1d))) / (rate(pdcp_user_plane_bytes_dl{networkID="<your network ID>"}[1h] offset 1d))) < -0.7)
+(sum by(gatewayID) (((rate(pdcp_user_plane_bytes_dl{networkID="\<your network ID\>"}[1h])) - (rate(pdcp_user_plane_bytes_dl{networkID="\<your network ID\>"}[1h] offset 1d))) / (rate(pdcp_user_plane_bytes_dl{networkID="\<your network ID\>"}[1h] offset 1d))) \< -0.7)
 ```
 
 Duration:
@@ -212,7 +212,7 @@ This alert will fire if for any of the gateway in your network, connected UEs di
 Expression:
 
 ```promql
-(ue_connected{networkID="<your network ID>"} - ue_connected{networkID="<your network ID>"} offset 1d) / (ue_connected{networkID="<your network ID>"}) < -0.5
+(ue_connected{networkID="\<your network ID\>"} - ue_connected{networkID="\<your network ID\>"} offset 1d) / (ue_connected{networkID="\<your network ID\>"}) \< -0.5
 ```
 
 Duration:

@@ -12,7 +12,7 @@ This section walks through upgrading different components of the Magma topology.
 
 Orc8r and gateways both follow a SemVer-like versioning of `MAJOR.MINOR.PATCH`, with the following constraints
 
-- Gateway version must be <= Orc8r version
+- Gateway version must be \<= Orc8r version
 - Gateway can diverge at most 1 minor version from Orc8r
 
 For example
@@ -22,7 +22,7 @@ For example
 - ✅ Gateway 1.3.3, Orc8r 1.4.0
 - ✅ Gateway 1.3.3, Orc8r 1.4.10
 - 🚨 Gateway 1.2.0, Orc8r 1.4.0 (more than 1 minor)
-- 🚨 Gateway 1.4.1, Orc8r 1.4.0 (gateway > Orc8r)
+- 🚨 Gateway 1.4.1, Orc8r 1.4.0 (gateway \> Orc8r)
 
 ## Orc8r-gateway upgrade flow
 

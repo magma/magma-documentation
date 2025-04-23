@@ -24,8 +24,8 @@ hide_title: true
 
 1. Run the command sudo mobility_cli.py get_subscriber_table, the output will show the list of subscribers(by IMSI) that  are currently  attached to the network. If the user is showing in the list, it means the attach request was successfully completed. If the IMSI is not showing there, proceed with the next step
 2. Verify in the pcap trace or NMS logs the reason of attach reject.
-    a. To obtain a pcap trace in AGW you can run the following command `sudo tcpdump -i any sctp -w <destination path>`
-    b. To verify the logs in NMS you can go in NMS to Equipment->Select the AGW-> Logs->Search logs
+    a. To obtain a pcap trace in AGW you can run the following command `sudo tcpdump -i any sctp -w \<destination path\>`
+    b. To verify the logs in NMS you can go in NMS to Equipment-\>Select the AGW-\> Logs-\>Search logs
 
 The attach request flow should follow below signal flow, where sctpd, mme, subscriberdb, mobilityd and sessiond are used services in the AGW:
 
@@ -50,7 +50,7 @@ PROTOCOL_ERROR 111
 
 Suggested Solution:
 
-1. Identify which parameter the UE is sending in the Attach Request and compare with the ones Magma support. You can find which parameters magma is currently supported from the code. <https://github.com/magma/magma/tree/master/lte/gateway/c/core/oai/tasks/nas/emm/msg/AttachRequest.cpp>
+1. Identify which parameter the UE is sending in the Attach Request and compare with the ones Magma support. You can find which parameters magma is currently supported from the code. \<https://github.com/magma/magma/tree/master/lte/gateway/c/core/oai/tasks/nas/emm/msg/AttachRequest.cpp\>
 
     Note: Make sure to select the branch you are currently have in your network(v1.1, v1.2, v1.3 , etc)
 
@@ -85,4 +85,4 @@ Suggested Solution:
 
 1. Double check with the Auth Key and OPC are correctly set for this user
 2. Verify the Auth Key and OPC values with the SIM vendor
-3. If issue still persists, please  file github issues or ask in our support channels <https://magmacore.org/join-the-open-source-community/>
+3. If issue still persists, please  file github issues or ask in our support channels \<https://magmacore.org/join-the-open-source-community/\>

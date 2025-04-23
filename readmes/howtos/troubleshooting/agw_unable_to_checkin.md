@@ -88,8 +88,8 @@ Sample control_proxy.yml file
     - Next, using the pod name get the logs from the pod with below command. Check if there is any problematic log for the related pod
 
         ```bash
-        kubectl -n orc8r logs -f <nginx podname>
-        kubectl -n orc8r logs -f <bootstrapper podname>
+        kubectl -n orc8r logs -f \<nginx podname\>
+        kubectl -n orc8r logs -f \<bootstrapper podname\>
         ```
 
         For example: `kubectl -n orc8r get logs orc8r-bootstrapper-775b5b8f6d-89spq`
@@ -100,4 +100,4 @@ Sample control_proxy.yml file
     AGW$ sudo service magma@magmad restart
     ```
 
-11. If issue still persists, please  file github issues or ask in our support channels <https://magmacore.org/join-the-open-source-community/>
+11. If issue still persists, please  file github issues or ask in our support channels \<https://magmacore.org/join-the-open-source-community/\>

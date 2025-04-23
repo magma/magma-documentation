@@ -148,7 +148,7 @@ APN will only be applied for the Gx interactions, as the config for Gy is empty.
 
 ### FeG
 
-- Here are the steps to test the FeG <-> Gx/Gy/S6a connections
+- Here are the steps to test the FeG \<-\> Gx/Gy/S6a connections
     - Exec into `session_proxy` container: `docker exec -it session_proxy bash`
     - Run `/var/opt/magma/bin/gx_client_cli`with the following parameters
         - --commands=IT
@@ -161,7 +161,7 @@ APN will only be applied for the Gx interactions, as the config for Gy is empty.
     - Run `/var/opt/magma/bin/gy_client_cli` with the following parameters
         - --commands=IT
         - --addr
-    - Run `/var/opt/magma/bin/s6a_client_cli air <IMSI>`
+    - Run `/var/opt/magma/bin/s6a_client_cli air \<IMSI\>`
         - Example: `/var/opt/magma/bin/s6a_cli air 001010000091111`
 
 ### AGW

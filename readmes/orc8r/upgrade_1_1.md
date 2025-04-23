@@ -21,7 +21,7 @@ including developer tooling, a Helm chart repository, and a container registry.
 ## Create a New Root Module
 
 First, create a new directory somewhere to store your new root Terraform module
-for the 1.1.x deployment. We have an example root module at <https://github.com/facebookincubator/magma/tree/v1.1/orc8r/cloud/deploy/terraform/orc8r-helm-aws/examples/online-upgrade>
+for the 1.1.x deployment. We have an example root module at \<https://github.com/facebookincubator/magma/tree/v1.1/orc8r/cloud/deploy/terraform/orc8r-helm-aws/examples/online-upgrade\>
 that we recommend you use for the upgrade. Copy all the files to your new
 directory and change the `source` attribute of both modules in `main.tf` to
 `github.com/facebookincubator/magma//orc8r/cloud/deploy/terraform/orc8r-aws` and
@@ -168,7 +168,7 @@ $ kubectl --namespace orc8r exec -it ${CNTLR_POD} bash
 ... 149 datastore_to_blobstore.go:84] SUCCESS
 ... 149 main.go:53] END MIGRATION
 ... 149 main.go:85] [manually verify] serial number count: 42
-... 149 main.go:97] [manually verify] key-value pair: {key: REDACTED, value: id:<gateway:<hardware_id:"redacted-1234-1234-1234-redacted" > > not_before:<seconds:42 nanos:42 > not_after:<seconds:42 nanos:42 > }
+... 149 main.go:97] [manually verify] key-value pair: {key: REDACTED, value: id:\<gateway:\<hardware_id:"redacted-1234-1234-1234-redacted" \> \> not_before:\<seconds:42 nanos:42 \> not_after:\<seconds:42 nanos:42 \> }
 ...
 
 (pod)$ ./m008_accessd_to_blobstore -verify
@@ -178,7 +178,7 @@ $ kubectl --namespace orc8r exec -it ${CNTLR_POD} bash
 ... 156 datastore_to_blobstore.go:84] SUCCESS
 ... 156 main.go:52] END MIGRATION
 ... 156 main.go:85] [manually verify] number of operators: 1
-... 156 main.go:97] [manually verify] operator-acl pair: {operator: operator:"admin_operator" , acl: operator:<operator:"admin_operator" > entities:<key:"Id_Wildcard_Gateway" value:<id:<wildcard:<> > permissions:3 > > entities:<key:"Id_Wildcard_Network" value:<id:<wildcard:<type:Network > > permissions:3 > > entities:<key:"Id_Wildcard_Operator" value:<id:<wildcard:<type:Operator > > permissions:3 > > }
+... 156 main.go:97] [manually verify] operator-acl pair: {operator: operator:"admin_operator" , acl: operator:\<operator:"admin_operator" \> entities:\<key:"Id_Wildcard_Gateway" value:\<id:\<wildcard:\<\> \> permissions:3 \> \> entities:\<key:"Id_Wildcard_Network" value:\<id:\<wildcard:\<type:Network \> \> permissions:3 \> \> entities:\<key:"Id_Wildcard_Operator" value:\<id:\<wildcard:\<type:Operator \> \> permissions:3 \> \> }
 ```
 
 These 2 CLIs will spit out a few records from the migrated tables as output.
@@ -252,7 +252,7 @@ Because NS records don't support wildcards, you'll have to add new records
 for the following subdomains:
 
 - `master.nms.` to access the admin UI to create and manage NMS tenants
-- `<tenant>.nms.` for each of your tenants (replace `<tenant>` with the
+- `\<tenant\>.nms.` for each of your tenants (replace `\<tenant\>` with the
 organization ID you set up in the NMS)
 
 You can also remove the old CNAME record for the `nms.` subdomain, that will
@@ -268,8 +268,8 @@ When you are satisfied with your v1.1 deployment and you've upgraded all your
 LTE AGW's in the field, you can safely purge and clean up the old v1.0
 components.
 
-To delete the v1.0 application components, `helm delete --purge <name>`. You
-can safely `kubectl delete namespace <name>` after this (make sure you pick
+To delete the v1.0 application components, `helm delete --purge \<name\>`. You
+can safely `kubectl delete namespace \<name\>` after this (make sure you pick
 the namespace that you used for v1.0, not v1.1).
 
 For the online upgrade we spun up new worker nodes to handle the extra load of

@@ -66,7 +66,7 @@ AGW$ sudo service magma@magmad restart
 
 ## Creating and Configuring Your Network
 
-Navigate to your NMS instance, <https://your-org.nms.yourdomain.com>, and log in
+Navigate to your NMS instance, \<https://your-org.nms.yourdomain.com\>, and log in
 with the superuser credentials you provisioned for this organization. If this
 is a fresh Orchestrator install, you will be prompted to create your first
 network. Otherwise, select "Create Network" from the network selection icon

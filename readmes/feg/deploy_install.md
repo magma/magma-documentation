@@ -80,9 +80,9 @@ is provided below (please check `magma/feg/gateway/docker/.env` for the most
 # limitations under the License.
 
 COMPOSE_PROJECT_NAME=feg
-DOCKER_REGISTRY=<registry>
-DOCKER_USERNAME=<username>
-DOCKER_PASSWORD=<password>
+DOCKER_REGISTRY=\<registry\>
+DOCKER_USERNAME=\<username\>
+DOCKER_PASSWORD=\<password\>
 IMAGE_VERSION=latest
 GIT_HASH=master
 
@@ -139,7 +139,7 @@ registered with the Orchestrator. At this time, NMS support for FeG
 registration is still in-progress.
 
 To register the FeG, go to the Orchestrator's Swagger UI in your browser.
-(i.e. <https://controller.url.sample:9443/swagger/v1/ui/>).
+(i.e. \<https://controller.url.sample:9443/swagger/v1/ui/\>).
 
 Now, create a Federation Network. This is found at `/feg` under the
 **Federation Networks** section. If you have not registered any gateways before, you

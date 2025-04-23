@@ -153,8 +153,8 @@ A minimal values file is at `${MAGMA_ROOT}/orc8r/cloud/helm/orc8r/examples/minik
 
 This section describes how to install based on local charts. However, you can also install charts from the official chart repositories
 
-- Stable: <https://linuxfoundation.jfrog.io/artifactory/magma-helm-prod/>
-- Test: <https://linuxfoundation.jfrog.io/artifactory/magma-helm-test/>
+- Stable: \<https://linuxfoundation.jfrog.io/artifactory/magma-helm-prod/\>
+- Test: \<https://linuxfoundation.jfrog.io/artifactory/magma-helm-test/\>
 
 Install base `orc8r` chart
 
@@ -345,7 +345,7 @@ Start port-forward for Nginx (this tab will hang):
 kubectl --namespace orc8r port-forward svc/nginx-proxy 8081:443
 ```
 
-Log in to NMS at <https://magma-test.localhost:8081> using credentials you chose when creating the admin user.
+Log in to NMS at \<https://magma-test.localhost:8081\> using credentials you chose when creating the admin user.
 
 ## Appendix
 
