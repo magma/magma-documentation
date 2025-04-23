@@ -84,7 +84,7 @@ Following Diagram shows packet flow for UL direction.
     - DL ingress hook for SGi interface.
 3. PipelineD would select right map for adding session entries
 
-<!-- ![eBPF datapath](../../../../../readmes/assets/ebpf-dp1.png) -->
+<!-- ![eBPF datapath](../../../../docs/assets/ebpf-dp1.png) -->
 
 ### Control path for eBPF
 

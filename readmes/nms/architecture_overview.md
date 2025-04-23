@@ -10,7 +10,7 @@ ability to configure and receive alerts.
 
 ## Big Picture
 
-![nms](assets/nms/userguide/nms.png)
+![nms](../assets/nms/userguide/nms.png)
 
 ### NMS UI
 

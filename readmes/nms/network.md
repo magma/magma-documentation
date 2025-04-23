@@ -8,7 +8,7 @@ hide_title: true
 
 ## Network dashboard
 
-![network_dashboard](assets/nms/userguide/network_dashboard.png)
+![network_dashboard](../assets/nms/userguide/network_dashboard.png)
 The network dashboard contains the following sections:
 
 - KPI grid displaying number of [eNodeBs, Gateways, Subscribers, Policies, APNs]
@@ -34,21 +34,21 @@ The same network configuration dialog is used for add as well as edit. The dialo
 ### Adding a new LTE network
 
 A new network can be added by clicking on the button as shown below
-![add_new_network](assets/nms/userguide/add_new_network.png)
+![add_new_network](../assets/nms/userguide/add_new_network.png)
 
 Add dialog is shown below.
 
-![network_config1](assets/nms/userguide/network_config1.png)
-![network_config2](assets/nms/userguide/network_config2.png)
-![network_config3](assets/nms/userguide/network_config3.png)
+![network_config1](../assets/nms/userguide/network_config1.png)
+![network_config2](../assets/nms/userguide/network_config2.png)
+![network_config3](../assets/nms/userguide/network_config3.png)
 
 Once the new network has been added. It will show up in the network
 selector as shown below:
-![network_selector_network](assets/nms/userguide/network_selector_network.png)
+![network_selector_network](../assets/nms/userguide/network_selector_network.png)
 
 ### Editing network configuration
 
 The network configuration can be edited by clicking on the edit button in the network overview page
 and editing as follows:
 
-![network_config5](assets/nms/userguide/network_config5.png)
+![network_config5](../assets/nms/userguide/network_config5.png)

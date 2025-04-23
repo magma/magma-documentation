@@ -11,7 +11,7 @@ ability to configure and receive alerts.
 
 ## Big Picture
 
-![nms](../../../../readmes/assets/nms/userguide/nms.png)
+![nms](../../../docs/assets/nms/userguide/nms.png)
 
 ### NMS UI
 

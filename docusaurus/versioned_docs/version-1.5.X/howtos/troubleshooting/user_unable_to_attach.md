@@ -30,7 +30,7 @@ original_id: user_unable_to_attach
 
 The attach request flow should follow below signal flow, where sctpd, mme, subscriberdb, mobilityd and sessiond are used services in the AGW:
 
-![Attach flow](../../../../../readmes/assets/lte/attach_flow.png)
+![Attach flow](../../../../docs/assets/lte/attach_flow.png)
 
 
 Below you will find possible causes of why the Attach Request could be rejected by AGW.

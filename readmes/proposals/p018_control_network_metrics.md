@@ -45,7 +45,7 @@ deployment.
 
 ## Proposal
 
-![Network metrics path](assets/orc8r/control_network_metrics.png)
+![Network metrics path](../assets/orc8r/control_network_metrics.png)
 
 To collect relevant byte count metrics, we propose using an
 [eBPF](https://ebpf.io/what-is-ebpf/) program. eBPF is a modern Linux kernel

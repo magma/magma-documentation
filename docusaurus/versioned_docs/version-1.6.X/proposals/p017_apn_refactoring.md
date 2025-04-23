@@ -36,7 +36,7 @@ Currently two main issues exists in the way APNs are handled
 * APN resource configuration is too tightly coupled with Subscriberdb data models. This makes any further changes to APN config hard and unnecessarily affects subscriber data models.
 
 ## **Existing Implementation**
-![existing](../../../../readmes/assets/proposals/p017/apn_old.png)
+![existing](../../../docs/assets/proposals/p017/apn_old.png)
 
 ### **Orc8r**
 
@@ -87,7 +87,7 @@ gateway_apn_config
 
 ## Implementation
 
-![new](../../../../readmes/assets/proposals/p017/apn_new.png)
+![new](../../../docs/assets/proposals/p017/apn_new.png)
 
 ### Orc8r
 

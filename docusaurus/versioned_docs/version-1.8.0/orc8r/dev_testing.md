@@ -51,11 +51,11 @@ The default run configurations are checked in under `.run/`. You'll also need to
 
 `Go Test` configurations should look something like
 
-![intellij_subproject_configs](../../../../readmes/assets/orc8r/intellij_subproject_configs.png)
+![intellij_subproject_configs](../../../docs/assets/orc8r/intellij_subproject_configs.png)
 
 `Multirun` configurations should include `go test all`, and look something like
 
-![intellij_multirun](../../../../readmes/assets/orc8r/intellij_multirun.png)
+![intellij_multirun](../../../docs/assets/orc8r/intellij_multirun.png)
 
 ### Install prereqs
 

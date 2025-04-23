@@ -36,7 +36,7 @@ Currently two main issues exists in the way APNs are handled
 
 ## **Existing Implementation**
 
-![existing](assets/proposals/p017/apn_old.png)
+![existing](../assets/proposals/p017/apn_old.png)
 
 ### **Orc8r**
 
@@ -86,7 +86,7 @@ gateway_apn_config
 
 ## Implementation
 
-![new](assets/proposals/p017/apn_new.png)
+![new](../assets/proposals/p017/apn_new.png)
 
 ### Orc8r
 
