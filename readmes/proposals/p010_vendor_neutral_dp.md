@@ -132,7 +132,7 @@ The following section provides functional requirements for the SAS facing interf
 </tr>
 <tr class="odd">
 <td>SCI-02</td>
-<td><p>The SAS client interface shall be compliant with [1] when sending the following messages on behalf of proxied CBSDs:</p>
+<td><p>The SAS client interface shall be compliant with [1] when sending the following messages on behalf of proxied CBSDs:</p></td>
 <ol type="1">
 <li><p>Registration Request</p></li>
 <li><p>Spectrum Inquiry Request</p></li>
@@ -141,7 +141,7 @@ The following section provides functional requirements for the SAS facing interf
 <li><p>CBSD Measurement Report</p></li>
 <li><p>Relinquishment Request</p></li>
 <li><p>Deregistration Request</p></li>
-</ol></td>
+</ol>
 <td>P1</td>
 </tr>
 <tr class="even">
@@ -175,7 +175,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="even">
 <td>CPI-01</td>
-<td><p>The CBSD proxy interface shall accept incoming connections from the SAS client interfaces in CBSDs as defined in [1], receiving and processing request message types including:</p>
+<td><p>The CBSD proxy interface shall accept incoming connections from the SAS client interfaces in CBSDs as defined in [1], receiving and processing request message types including:</p></td>
 <ol type="1">
 <li><p>Registration Request</p></li>
 <li><p>Spectrum Inquiry Request</p></li>
@@ -184,7 +184,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 <li><p>CBSD Measurement Report</p></li>
 <li><p>Relinquishment Request</p></li>
 <li><p>Deregistration Request</p></li>
-</ol></td>
+</ol>
 <td>P1</td>
 </tr>
 <tr class="odd">
@@ -251,7 +251,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="odd">
 <td>APM-08</td>
-<td><p>The aggregation and proxy management process shall log state information for CBSDs and grants of Passive and Active mode connections in the CBSD &amp; Grant Database with metadata including at least:</p>
+<td><p>The aggregation and proxy management process shall log state information for CBSDs and grants of Passive and Active mode connections in the CBSD &amp; Grant Database with metadata including at least:</p></td>
 <ul>
 <li><p>CBSD ID (FCC_ID + Serial #)</p></li>
 <li><p>State</p></li>
@@ -260,7 +260,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 <li><p>Response code (if applicable)</p></li>
 <li><p>Timestamp</p></li>
 <li><p>SAS Operator Name</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="even">
@@ -282,12 +282,12 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="even">
 <td>UI-01</td>
-<td><p>The DP UI shall provide the ability to configure a SAS operator with SAS specific details:</p>
+<td><p>The DP UI shall provide the ability to configure a SAS operator with SAS specific details:</p></td>
 <ul>
 <li><p>Provider Name</p></li>
 <li><p>Host URL</p></li>
 <li><p>User ID</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="odd">
@@ -317,7 +317,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="even">
 <td>UI-07</td>
-<td><p>The DP UI shall provide the ability to filter historical logs based on:</p>
+<td><p>The DP UI shall provide the ability to filter historical logs based on:</p></td>
 <ul>
 <li><p>FCC_ID</p></li>
 <li><p>CBSD Serial #</p></li>
@@ -327,16 +327,16 @@ The following section provides functional requirements for the CBSD Proxy Interf
 <li><p>Response code (if applicable)</p></li>
 <li><p>Timestamp</p></li>
 <li><p>SAS Operator Name</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="odd">
 <td>UI-08</td>
-<td><p>The DP UI shall allow configuration of users with rights including at least:</p>
+<td><p>The DP UI shall allow configuration of users with rights including at least:</p></td>
 <ul>
 <li><p>Read Only Users</p></li>
 <li><p>Read/Write Users</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="even">
@@ -351,7 +351,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="even">
 <td>UI-11</td>
-<td><p>The DP UI shall allow the user to select a connection/CBSD ID to view real-time updates on messaging including:</p>
+<td><p>The DP UI shall allow the user to select a connection/CBSD ID to view real-time updates on messaging including:</p></td>
 <ul>
 <li><p>CBSD ID (FCC_ID + Serial #)</p></li>
 <li><p>State</p></li>
@@ -360,22 +360,22 @@ The following section provides functional requirements for the CBSD Proxy Interf
 <li><p>Response code (if applicable)</p></li>
 <li><p>Timestamp</p></li>
 <li><p>SAS Operator Name</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="odd">
 <td>UI-12</td>
-<td><p>The DP UI shall provide a summary dashboard with graphical displays of:</p>
+<td><p>The DP UI shall provide a summary dashboard with graphical displays of:</p></td>
 <ul>
-<li><p>Session counts in each state per [1] including at least:</p>
+<li><p>Session counts in each state per [1] including at least:</p></li>
 <ul>
 <li><p>Registered</p></li>
 <li><p>Granted</p></li>
 <li><p>Suspended</p></li>
 <li><p>Authorized</p></li>
-</ul></li>
+</ul>
 <li><p>A table of sessions that have changed state in the last 24 hours</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="even">
@@ -385,7 +385,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="odd">
 <td>UI-14</td>
-<td><p>The DP UI shall provide configuration interface to allow creation, modification, or deletion of CBSD records including the following installation parameters:</p>
+<td><p>The DP UI shall provide configuration interface to allow creation, modification, or deletion of CBSD records including the following installation parameters:</p></td>
 <ul>
 <li><p>CBSD Serial Number</p></li>
 <li><p>FCC ID</p></li>
@@ -401,7 +401,7 @@ The following section provides functional requirements for the CBSD Proxy Interf
 <li><p>indoorDeployment</p></li>
 <li><p>latitude</p></li>
 <li><p>longitude</p></li>
-</ul></td>
+</ul>
 <td>P2</td>
 </tr>
 <tr class="even">
@@ -433,14 +433,14 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="even">
 <td>DA-03</td>
-<td><p>The DP shall be self contained such that it is deployable in any standard kubernetes environment including:</p>
+<td><p>The DP shall be self contained such that it is deployable in any standard kubernetes environment including:</p></td>
 <ul>
-<li><p>On premises x86 compute platform</p>
+<li><p>On premises x86 compute platform</p></li>
 <ul>
 <li><p>Specs TBD</p></li>
-</ul></li>
+</ul>
 <li><p>AWS EKS</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 <tr class="odd">
@@ -450,13 +450,13 @@ The following section provides functional requirements for the CBSD Proxy Interf
 </tr>
 <tr class="even">
 <td>DA-05</td>
-<td><p>The DP shall support networking requirements on both SAS Client Interface and CBSD Proxy Interface including:</p>
+<td><p>The DP shall support networking requirements on both SAS Client Interface and CBSD Proxy Interface including:</p></td>
 <ul>
 <li><p>1Gbps or 10Gbps NIC (copper or fiber for both)</p></li>
 <li><p>DHCP or Static IP based on configuration</p></li>
 <li><p>Multiple IP address support per interface</p></li>
 <li><p>VLAN support based on configuration</p></li>
-</ul></td>
+</ul>
 <td>P1</td>
 </tr>
 </tbody>
