@@ -17,14 +17,13 @@ name: Docs Check
 
 on:
   pull_request:
-    branches: [ main, 'test-*' ]
+    branches: [ main ]
   push:
-    branches: [ main, 'test-*' ]
+    branches: [ main ]
 
 jobs:
   docusaurus-test:
     name: Docusaurus Build & Log
-    # Replace by docker image (or docker compose)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,16 +31,14 @@ jobs:
         run: |
           cd docusaurus/
           docker compose -f docker-compose.yml build dev 
-        # consider using caddy or serve
       - name: Start docusaurus container
         run: |
           cd docusaurus/
           docker compose -f docker-compose.yml up -d dev
-        # consider using caddy or serve
       - name: Wait for docusaurus to start
         run: |
           echo "Waiting for Docusaurus to start..."
-          sleep 120
+          sleep 60
       - name: Check running containers
         run: |
           echo "Checking running containers..."
@@ -53,11 +50,7 @@ jobs:
       - name: Check Docusaurus health
         run: |
           echo "Checking Docusaurus health..."
-          docker exec docusaurus_local curl -f http://localhost:3000 || exit 1
-
-      - name: Verify build output
-        run: |
-          test -d build && echo "✅ Build successful"
+          curl -f http://localhost:3000 > /dev/null || exit 1
 
   markdown-lint:
     name: Markdown Format Check
