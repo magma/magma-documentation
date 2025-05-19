@@ -17,33 +17,46 @@ name: Docs Check
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, 'test-*' ]
   push:
-    branches: [ main ]
+    branches: [ main, 'test-*' ]
 
 jobs:
   docusaurus-test:
     name: Docusaurus Build & Log
+    # Replace by docker image (or docker compose)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
+      - name: Build docusaurus container
         run: |
           cd docusaurus/
-          yarn install --frozen-lockfile
-
-      - name: Build and test Docusaurus
+          docker compose -f docker-compose.yml build dev 
+        # consider using caddy or serve
+      - name: Start docusaurus container
         run: |
           cd docusaurus/
-          yarn test
-          
+          docker compose -f docker-compose.yml up -d dev
+        # consider using caddy or serve
+      - name: Wait for docusaurus to start
+        run: |
+          echo "Waiting for Docusaurus to start..."
+          sleep 120
+      - name: Check running containers
+        run: |
+          echo "Checking running containers..."
+          docker ps -a
+      - name: Check Docusaurus logs
+        run: |
+          echo "Checking Docusaurus logs..."
+          docker logs docusaurus_local
+      - name: Check Docusaurus health
+        run: |
+          echo "Checking Docusaurus health..."
+          docker exec docusaurus_local curl -f http://localhost:3000 || exit 1
+
       - name: Verify build output
         run: |
-          cd docusaurus/
           test -d build && echo "✅ Build successful"
 
   markdown-lint:
