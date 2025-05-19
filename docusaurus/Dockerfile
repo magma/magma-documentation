@@ -22,6 +22,16 @@ RUN corepack enable
 WORKDIR /opt/docusaurus
 COPY package.json .
 COPY package-lock.json* .
+COPY docs docs
+COPY src src
+COPY static static
+COPY versioned_docs versioned_docs
+COPY versioned_sidebars versioned_sidebars
+COPY docusaurus.config.js .
+COPY sidebars.js .
+COPY sidebars.json .
+COPY test.js .
+COPY versions.json .
 
 #==================================================================
 # Local deployment

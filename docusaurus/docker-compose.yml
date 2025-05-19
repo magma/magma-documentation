@@ -10,7 +10,6 @@ services:
     ports:
       - "3000:3000"      
     volumes:
-      - .:/opt/docusaurus
       - ./../readmes:/opt/docusaurus/docs
     environment:
       - NODE_ENV=development
