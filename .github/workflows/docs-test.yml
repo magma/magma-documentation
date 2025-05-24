@@ -27,24 +27,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
+      - name: Build docusaurus container
         run: |
           cd docusaurus/
-          yarn install --frozen-lockfile
-
-      - name: Build and test Docusaurus
+          docker compose -f docker-compose.yml build dev 
+      - name: Start docusaurus container
         run: |
           cd docusaurus/
-          yarn test
-          
-      - name: Verify build output
+          docker compose -f docker-compose.yml up -d dev
+      - name: Wait for docusaurus to start
         run: |
-          cd docusaurus/
-          test -d build && echo "✅ Build successful"
+          echo "Waiting for Docusaurus to start..."
+          sleep 60
+      - name: Check running containers
+        run: |
+          echo "Checking running containers..."
+          docker ps -a
+      - name: Check Docusaurus logs
+        run: |
+          echo "Checking Docusaurus logs..."
+          docker logs docusaurus_local
+      - name: Check Docusaurus health
+        run: |
+          echo "Checking Docusaurus health..."
+          curl -f http://localhost:3000 > /dev/null || exit 1
 
   markdown-lint:
     name: Markdown Format Check

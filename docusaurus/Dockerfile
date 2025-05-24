@@ -20,8 +20,23 @@ FROM node:22-slim AS base
 ENV FORCE_COLOR=0
 RUN corepack enable
 WORKDIR /opt/docusaurus
+
+# Documentation contents
+# The docs directory is overwritten by compose file
+COPY docs docs
+COPY src src
+COPY static static
+COPY versioned_docs versioned_docs
+COPY versioned_sidebars versioned_sidebars
+
+# Configuration files
+COPY docusaurus.config.js .
 COPY package.json .
 COPY package-lock.json* .
+COPY sidebars.js .
+COPY sidebars.json .
+COPY test.js .
+COPY versions.json .
 
 #==================================================================
 # Local deployment
