@@ -79,9 +79,9 @@ const config = {
     {
       image: favicon,
       navbar: {
-        title: 'Magma',
+        // title: 'Magma',
         logo: {
-          alt: 'Magma Logo',
+          alt: 'Magma',
           src: magmaLogo,
         },
         items: [
