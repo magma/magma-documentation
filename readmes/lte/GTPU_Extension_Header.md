@@ -44,7 +44,7 @@ In the GTPU packet with extension header, the UL PDU SESSION INFORMATION frame i
 The below Information Elements present in the PDU Session Information frame:
 
 - PDU Type: The PDU Type indicates the structure of the PDU session UP frame. The field takes the value of the PDU Type it identifies: "0" for PDU Type 0.
-  Value range {0= DL PDU SESSION INFORMATION, 1=UL PDU SESSION INFORMATION, 2-15=reserved for future PDU type extensions}.
+  Value range \{0= DL PDU SESSION INFORMATION, 1=UL PDU SESSION INFORMATION, 2-15=reserved for future PDU type extensions\}.
 - Spare: The spare field is set to "0" by the sender and should not be interpreted by the receiver.
 - QoS Flow Identifier: When this IE is present, this parameter indicates the QoS Flow Identifier of the QoS flow to which the transferred packet belongs.
 - Padding: The padding is included at the end of the frame.
