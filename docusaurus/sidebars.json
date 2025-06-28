@@ -8,9 +8,9 @@
     ],
     "Tutorials": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Operate your own private mobile network with Charmed Magma",
-        "ids": [
+        "items": [
           "tutorials/00_overview",
           "tutorials/01_getting_started",
           "tutorials/02_deploying_magma_orchestrator",
@@ -24,9 +24,9 @@
     ],
     "Usage": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "How-To",
-        "ids": [
+        "items": [
           "howtos/ue_metering",
           "howtos/config_agw_bridged",
           "howtos/5g_nsa_support",
@@ -41,9 +41,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/overview",
           "nms/dashboard",
           "nms/equipment",
@@ -60,68 +60,48 @@
     ],
     "Architecture": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/architecture_overview"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/architecture_overview",
           "orc8r/architecture_modularity",
           "orc8r/architecture_security"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/architecture_overview"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "FeG",
-        "ids": [
+        "items": [
           "feg/architecture_overview"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Domain Proxy",
-        "ids": [
+        "items": [
           "dp/architecture_overview"
         ]
       }
     ],
-    "Deploy": [
+    "Deployment": [
       {
-        "type": "subcategory",
-        "label": "General",
-        "ids": [
-          "general/aws_cloudstrapper"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Access Gateway",
-        "ids": [
-          "lte/deploy_install",
-          "lte/deploy_install_docker",
-          "lte/deploy_config_agw",
-          "lte/deploy_config_enodebd",
-          "lte/deploy_config_apn",
-          "lte/deploy_agw_using_juju",
-          "lte/build_install_magma_pkg_in_agw"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Orchestrator",
-        "ids": [
+        "type": "category",
+        "label": "Orchestrator (Orc8r)",
+        "items": [
           "orc8r/deploy_intro",
           "orc8r/deploy_install",
           "orc8r/deploy_using_ansible",
@@ -131,81 +111,90 @@
         ]
       },
       {
-        "type": "subcategory",
-        "label": "NMS",
-        "ids": [
+        "type": "category",
+        "label": "Access Gateway (AGW)",
+        "items": [
+          "lte/deploy_install",
+          "lte/deploy_install_docker",
+          "lte/deploy_agw_using_juju",
+          "lte/build_install_magma_pkg_in_agw"
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Federation Gateway (FEG)",
+        "items": [
+          "feg/deploy_intro",
+          "feg/deploy_build",
+          "feg/deploy_install",
+          "feg/docker"
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Network Management System (NMS)",
+        "items": [
           "nms/deploy_setup"
         ]
       },
       {
-        "type": "subcategory",
-        "label": "Federation Gateway",
-        "ids": [
-          "feg/deploy_intro",
-          "feg/deploy_build",
-          "feg/deploy_install"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Domain Proxy",
-        "ids": [
-          "dp/deploy_build"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Carrier WiFi",
-        "ids": [
+        "type": "category",
+        "label": "Legacy Deployment Content (To Be Categorized)",
+        "items": [
+          "general/aws_cloudstrapper",
+          "dp/deploy_build",
           "cwf/deploy_intro",
           "cwf/deploy_build",
-          "cwf/deploy_install"
+          "cwf/deploy_install",
+          "lte/deploy_config_agw",
+          "lte/deploy_config_enodebd",
+          "lte/deploy_config_apn"
         ]
       }
     ],
     "Configure": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/configure_agw_ha",
           "lte/configure_sentry"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/configure_thanos"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Federation Gateway",
-        "ids": [
+        "items": [
           "feg/configure_federation"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/nms_organizations"
         ]
       }
     ],
     "Upgrade": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "General",
-        "ids": [
+        "items": [
           "general/upgrade_intro"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/upgrade_debian_to_ubuntu",
           "lte/upgrade_1_6",
           "lte/upgrade_1_5",
@@ -216,9 +205,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/upgrade_intro",
           "orc8r/upgrade_1_6",
           "orc8r/upgrade_1_5",
@@ -231,9 +220,9 @@
     ],
     "Debug": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "General",
-        "ids": [
+        "items": [
           "howtos/troubleshooting/agw_healthcheck",
           "howtos/troubleshooting/agw_unable_to_checkin",
           "howtos/troubleshooting/user_unable_to_attach",
@@ -244,47 +233,47 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/debug_show_tech",
           "lte/debug_dp_probe",
           "lte/debug_user_control_plane"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Federated Gateway",
-        "ids": [
+        "items": [
           "feg/debug_cli"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Carrier WiFi",
-        "ids": [
+        "items": [
           "cwf/healthchecker",
           "cwf/pipelined_packet_tracer_debugging"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/debug_logs"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/alerts_troubleshooting"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Domain Proxy",
-        "ids": [
+        "items": [
           "dp/debug_logs"
         ]
       }
@@ -297,18 +286,18 @@
     ],
     "Technical Reference": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "General",
-        "ids": [
+        "items": [
           "resources/ref_pcap",
           "resources/ref_useful_links",
           "resources/ref_magma_metrics"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/readme_agw",
           "lte/dev_notes",
           "lte/openvswitch",
@@ -333,9 +322,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/dev_rest_api",
           "orc8r/dev_build",
           "orc8r/dev_testing",
@@ -350,9 +339,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/dev_spacing",
           "nms/dev_testing",
           "nms/dev_themes",
@@ -360,9 +349,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Federation Gateway",
-        "ids": [
+        "items": [
           "feg/dev_testing",
           "feg/docker",
           "feg/s1ap_federated_tests",
@@ -370,18 +359,18 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Carrier WiFi",
-        "ids": [
+        "items": [
           "cwf/dev_testing"
         ]
       }
     ],
     "Design Documents": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "General",
-        "ids": [
+        "items": [
           "proposals/p001_vpn_config_from_api",
           "proposals/p005_call_tracing",
           "proposals/p014_proposal_process",
@@ -390,9 +379,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "proposals/p003_qos_enforcement",
           "proposals/p004_fua_restrict_feature",
           "proposals/p007_header_enrichment",
@@ -404,18 +393,18 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "proposals/p002_scaled_prometheus_pipeline",
           "proposals/p010_subscriber_scaling",
           "proposals/p011_victoriametrics"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "proposals/p009_nms_mariadb_migration",
           "proposals/p016_nms_regression_testing"
         ]
