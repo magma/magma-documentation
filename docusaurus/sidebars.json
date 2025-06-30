@@ -7,6 +7,69 @@
     },
     {
       "type": "category",
+      "label": "Deployment",
+      "link": {
+        "type": "doc",
+        "id": "deployment/deployment"
+      },
+      "items": [
+        {
+          "type": "category",
+          "label": "Orchestrator (Orc8r)",
+          "items": [
+            "orc8r/deploy_intro",
+            "orc8r/deploy_install",
+            "orc8r/deploy_using_ansible",
+            "orc8r/deploy_using_juju",
+            "orc8r/deploy_terraform_options",
+            "orc8r/deploy_faq"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Access Gateway (AGW)",
+          "items": [
+            "lte/deploy_install",
+            "lte/deploy_install_docker",
+            "lte/deploy_agw_using_juju",
+            "lte/build_install_magma_pkg_in_agw",
+            "lte/deploy_config_agw",
+            "lte/deploy_config_enodebd",
+            "lte/deploy_config_apn"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Federation Gateway (FEG)",
+          "items": [
+            "feg/deploy_intro",
+            "feg/deploy_build",
+            "feg/deploy_install",
+            "feg/docker"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Network Management System (NMS)",
+          "items": [
+            "nms/deploy_setup"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Other Deployment Content",
+          "items": [
+            "general/aws_cloudstrapper",
+            "dp/deploy_build",
+            "cwf/deploy_intro",
+            "cwf/deploy_build",
+            "cwf/deploy_install"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
       "label": "Getting Started",
       "items": [
         "basics/prerequisites",
@@ -43,14 +106,9 @@
           "label": "How-To",
           "items": [
             "howtos/ue_metering",
-            "howtos/config_agw_bridged",
             "howtos/5g_nsa_support",
             "howtos/call_tracing",
             "howtos/events_monitoring",
-            "howtos/ipv6_agw",
-            "howtos/he_api",
-            "howtos/inbound_roaming",
-            "howtos/l3_transport",
             "howtos/network_probe",
             "howtos/package"
           ]
@@ -119,73 +177,29 @@
     },
     {
       "type": "category",
-      "label": "Deployment",
+      "label": "Configuration",
       "items": [
         {
-          "type": "category",
-          "label": "Orchestrator (Orc8r)",
-          "items": [
-            "orc8r/deploy_intro",
-            "orc8r/deploy_install",
-            "orc8r/deploy_using_ansible",
-            "orc8r/deploy_using_juju",
-            "orc8r/deploy_terraform_options",
-            "orc8r/deploy_faq"
-          ]
+          "type": "doc",
+          "id": "lte/deploy_config_agw",
+          "label": "First Time Setup"
         },
         {
-          "type": "category",
-          "label": "Access Gateway (AGW)",
-          "items": [
-            "lte/deploy_install",
-            "lte/deploy_install_docker",
-            "lte/deploy_agw_using_juju",
-            "lte/build_install_magma_pkg_in_agw"
-          ]
+          "type": "doc",
+          "id": "howtos/5g_nsa_support",
+          "label": "Enabling 5G"
         },
-        {
-          "type": "category",
-          "label": "Federation Gateway (FEG)",
-          "items": [
-            "feg/deploy_intro",
-            "feg/deploy_build",
-            "feg/deploy_install",
-            "feg/docker"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Network Management System (NMS)",
-          "items": [
-            "nms/deploy_setup"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Legacy Deployment Content (To Be Categorized)",
-          "items": [
-            "general/aws_cloudstrapper",
-            "dp/deploy_build",
-            "cwf/deploy_intro",
-            "cwf/deploy_build",
-            "cwf/deploy_install",
-            "lte/deploy_config_agw",
-            "lte/deploy_config_enodebd",
-            "lte/deploy_config_apn"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "Configure",
-      "items": [
         {
           "type": "category",
           "label": "Access Gateway",
           "items": [
             "lte/configure_agw_ha",
-            "lte/configure_sentry"
+            "lte/configure_sentry",
+            "howtos/config_agw_bridged",
+            "howtos/he_api",
+            "howtos/ipv6_agw",
+            "howtos/inbound_roaming",
+            "howtos/l3_transport"
           ]
         },
         {
@@ -208,6 +222,22 @@
           "items": [
             "nms/nms_organizations"
           ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Magma Use Cases",
+      "items": [
+        {
+          "type": "doc",
+          "id": "feg/deploy_intro",
+          "label": "Federation Gateway Integration"
+        },
+        {
+          "type": "doc",
+          "id": "cwf/deploy_intro",
+          "label": "CWAG Integration"
         }
       ]
     },
@@ -321,7 +351,8 @@
         "contributing/contribute_github",
         "contributing/contribute_codeowners",
         "contributing/contribute_tsc_norms",
-        "contributing/contribute_proposals"
+        "contributing/contribute_proposals",
+        "contributing/development_workflows"
       ]
     },
     {
