@@ -27,6 +27,13 @@
         },
         {
           "type": "category",
+          "label": "Network Management System (NMS)",
+          "items": [
+            "nms/deploy_setup"
+          ]
+        },
+        {
+          "type": "category",
           "label": "Access Gateway (AGW)",
           "items": [
             "lte/deploy_install",
@@ -46,13 +53,6 @@
             "feg/deploy_build",
             "feg/deploy_install",
             "feg/docker"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Network Management System (NMS)",
-          "items": [
-            "nms/deploy_setup"
           ]
         },
         {
