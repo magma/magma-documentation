@@ -69,6 +69,60 @@
     },
     {
       "type": "category",
+      "label": "Configuration",
+      "link": {
+        "type": "doc",
+        "id": "configuration/configuration"
+      },
+      "items": [
+        {
+          "type": "doc",
+          "id": "lte/deploy_config_agw",
+          "label": "First Time Setup"
+        },
+        {
+          "type": "doc",
+          "id": "howtos/5g_nsa_support",
+          "label": "Enabling 5G"
+        },
+        {
+          "type": "category",
+          "label": "Access Gateway",
+          "items": [
+            "lte/configure_agw_ha",
+            "lte/configure_sentry",
+            "howtos/config_agw_bridged",
+            "howtos/he_api",
+            "howtos/ipv6_agw",
+            "howtos/inbound_roaming",
+            "howtos/l3_transport"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Orchestrator",
+          "items": [
+            "orc8r/configure_thanos"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Federation Gateway",
+          "items": [
+            "feg/configure_federation"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "NMS",
+          "items": [
+            "nms/nms_organizations"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
       "label": "Getting Started",
       "items": [
         "basics/prerequisites",
@@ -169,56 +223,6 @@
           "label": "Domain Proxy",
           "items": [
             "dp/architecture_overview"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "Configuration",
-      "items": [
-        {
-          "type": "doc",
-          "id": "lte/deploy_config_agw",
-          "label": "First Time Setup"
-        },
-        {
-          "type": "doc",
-          "id": "howtos/5g_nsa_support",
-          "label": "Enabling 5G"
-        },
-        {
-          "type": "category",
-          "label": "Access Gateway",
-          "items": [
-            "lte/configure_agw_ha",
-            "lte/configure_sentry",
-            "howtos/config_agw_bridged",
-            "howtos/he_api",
-            "howtos/ipv6_agw",
-            "howtos/inbound_roaming",
-            "howtos/l3_transport"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Orchestrator",
-          "items": [
-            "orc8r/configure_thanos"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Federation Gateway",
-          "items": [
-            "feg/configure_federation"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "NMS",
-          "items": [
-            "nms/nms_organizations"
           ]
         }
       ]
