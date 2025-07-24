@@ -179,7 +179,8 @@
             "nms/alerts",
             "nms/federation",
             "nms/admin",
-            "nms/tips_and_tricks"
+            "nms/tips_and_tricks",
+            "nms/nms_setup_workflow"
           ]
         }
       ]
