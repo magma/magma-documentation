@@ -25,7 +25,8 @@ docusaurus/
 ├── docusaurus.config.js
 ├── sidebars.js
 ├── static/
-└── src/
+├── src/
+readmes/
 ```
 
 ---
@@ -43,11 +44,7 @@ docusaurus/
    git clone https://github.com/magma/magma-documentation.git
    ```
 
-4. **Start Docusaurus with Docker**  
-   You can now start Docker by opening it if you chose to install Docker Desktop or, for Docker Engine, with:
-   ```bash
-   sudo systemctl start docker
-   ```   
+4. **Start Docusaurus with Docker**     
    Navigate to the project folder:  
    ```bash
    cd magma-documentation/docusaurus
@@ -55,11 +52,20 @@ docusaurus/
    and set up Docusaurus by:  
    ```bash
    docker compose up dev
-   ```
+   ```   
 
 5. **Access the Documentation**  
    Once running, open your browser and visit: [http://localhost:3000/](http://localhost:3000/)
 
+6. **Proper Shutdown**  
+   You can stop this proccess without losing persistent data or associated configurations through:
+   ```bash
+   docker-compose stop
+   ```     
+   Or completely clean up your Docker environment with:  
+   ```bash
+   docker-compose down
+   ```
 ---
 
 ## Contact
