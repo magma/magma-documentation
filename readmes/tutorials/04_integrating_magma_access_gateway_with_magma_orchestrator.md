@@ -4,6 +4,12 @@ title: 4. Integrating Magma Access Gateway with Magma Orchestrator
 hide_title: true
 ---
 
+:::warning
+**UNMAINTAINED STATUS**: This Juju-based deployment guide is **UNMAINTAINED**.
+The scripts may not work with newer Juju versions or the current Magma architecture.
+Juju scripts currently live in the `magma/magma` repository. Their proposed migration to the [deployer repository](https://github.com/magma/magma-deployer) is pending TSC consensus and a vote.
+:::
+
 # 4. Integrating Magma Access Gateway with Magma Orchestrator
 
 ## Integrate Magma Access Gateway with Magma Orchestrator
@@ -108,3 +114,32 @@ Use the credentials from the previous step.
 4. Click on "Save and Continue". You should ignore the next tabs and continue clicking on "Save and Continue".
 5. Click on "my-gateway"
 6. You should see your gateway's health go to "Good" after a few minutes
+
+## Call for Contributors & Alternatives
+
+**Juju-based deployment is currently unmaintained.**
+
+The Juju scripts are retained for legacy and ecosystem reasons but are **not actively maintained by the core team**.  
+Community contributors are encouraged to help maintain and modernize them.
+
+If you are interested in contributing or tracking the status of Juju scripts, please engage via:
+- **GitHub Issue #15763** (canonical tracking issue)
+- Magma Slack channels
+
+### Supported Deployment Alternatives (Recommended)
+
+For a supported and actively maintained deployment experience, please use:
+- **AGW Docker Install** – for Access Gateway deployment
+- **Magma Deployer** – the modern, container-based deployment repository
+
+### Comparison
+
+| Feature | Juju Deployment | Container / Deployer Based |
+|-------|-----------------|----------------------------|
+| **Status** | Unmaintained (Legacy) | **Active / Recommended** |
+| **Maintenance** | Community (Needed) | Core Team & Community |
+| **Scalability** | Variable | High |
+| **Portability** | Juju-dependent | Universal (Docker / K8s) |
+
+> Juju scripts are being tracked and discussed under **Issue #15763**, which supersedes the earlier deprecation proposal (#15755).
+

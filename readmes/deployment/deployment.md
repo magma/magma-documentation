@@ -37,7 +37,7 @@ Magma consists of several key components, each with specific roles in the networ
 **Overview**: The Orchestrator is the central management system for Magma, handling configuration, monitoring, and policy enforcement across the network. It is critical for managing multiple AGWs and integrating with external systems.
 - **Technical Reference**: [Orchestrator Architecture](../orc8r/architecture_overview.md)
 - **Deployment Guides**:
-  - **Kubernetes**: [Deploying Orc8r with Juju](../orc8r/deploy_using_juju.md)
+  - **Kubernetes**: [Deploying Orc8r with Juju (Unmaintained)](../orc8r/deploy_using_juju.md) :warning:
   - **Baremetal**: [Baremetal Installation](../orc8r/deploy_install.md)
   - **Additional Guides**: [Ansible Deployment](../orc8r/deploy_using_ansible.md), [Terraform Options](../orc8r/deploy_terraform_options.md), [FAQ](../orc8r/deploy_faq.md)
 
@@ -53,7 +53,7 @@ Magma consists of several key components, each with specific roles in the networ
 - **Deployment Guides**:
   - **Docker**: [AGW Docker Installation](../lte/deploy_install_docker.md)
   - **Baremetal**: [AGW Baremetal Installation](../lte/deploy_install.md)
-  - **Kubernetes**: [Deploy AGW with Juju](../lte/deploy_agw_using_juju.md)
+  - **Kubernetes**: [Deploy AGW with Juju (Unmaintained)](../lte/deploy_agw_using_juju.md) :warning:
   - **Additional Guides**: [Build and Install Magma Package on AGW](../lte/build_install_magma_pkg_in_agw.md)
 
 ### Federation Gateway (FEG)

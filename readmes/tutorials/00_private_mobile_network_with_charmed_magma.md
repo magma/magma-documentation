@@ -4,6 +4,12 @@ title: Overview
 hide_title: true
 ---
 
+:::warning
+**UNMAINTAINED STATUS**: This Juju-based deployment guide is **UNMAINTAINED**.
+The scripts may not work with newer Juju versions or the current Magma architecture.
+Juju scripts currently live in the `magma/magma` repository. Their proposed migration to the [deployer repository](https://github.com/magma/magma-deployer) is pending TSC consensus and a vote.
+:::
+
 # Operate your own private mobile network with Charmed Magma
 
 In this tutorial, we will use Juju to deploy and run Magma's 4G core network on AWS.
@@ -32,3 +38,51 @@ project to simulate usage of this network. You will need:
 that Juju supports. See [Juju Clouds](https://juju.is/docs/olm/juju-supported-clouds)
 for more information.
 [^2]: All the commands were tested from a Ubuntu 22.04 LTS machine.
+
+## Call for Contributors & Alternatives
+
+The Juju scripts are currently unmaintained. We encourage community members to help maintain them.
+If you are interested in contributing, please engage via:
+- [GitHub Issue #15763](https://github.com/magma/magma/issues/15763)
+- Magma Slack channels
+
+### Supported Deployment Alternatives
+
+For a supported and actively maintained deployment experience, please consider:
+- **[AGW Docker Install](https://github.com/magma/magma/blob/master/lte/gateway/deploy/agw_install_docker.sh)**: For Access Gateway deployment.
+- **[Magma Deployer](https://github.com/magma/magma-deployer)**: The modern deployment repository for Magma.
+
+### Comparison
+
+| Feature | Juju Deployment | Container/Deployer Based |
+|---------|-----------------|--------------------------|
+| **Status** | Unmaintained (Legacy) | **Active / Recommended** |
+| **Maintenance** | Community (Pending) | Core Team & Community |
+| **Scalability** | Variable | High |
+| **Portability** | Juju-dependent | Universal (Docker/K8s) |
+
+Migration guidance is being tracked under [Issue #15755](https://github.com/magma/magma/issues/15755).
+
+## Call for Contributors & Alternatives
+
+The Juju scripts are currently unmaintained. We encourage community members to help maintain them.
+If you are interested in contributing, please engage via:
+- [GitHub Issue #15763](https://github.com/magma/magma/issues/15763)
+- Magma Slack channels
+
+### Supported Deployment Alternatives
+
+For a supported and actively maintained deployment experience, please consider:
+- **[AGW Docker Install](https://github.com/magma/magma/blob/master/lte/gateway/deploy/agw_install_docker.sh)**: For Access Gateway deployment.
+- **[Magma Deployer](https://github.com/magma/magma-deployer)**: The modern deployment repository for Magma.
+
+### Comparison
+
+| Feature | Juju Deployment | Container/Deployer Based |
+|---------|-----------------|--------------------------|
+| **Status** | Unmaintained (Legacy) | **Active / Recommended** |
+| **Maintenance** | Community (Pending) | Core Team & Community |
+| **Scalability** | Variable | High |
+| **Portability** | Juju-dependent | Universal (Docker/K8s) |
+
+Migration guidance is being tracked under [Issue #15755](https://github.com/magma/magma/issues/15755).
