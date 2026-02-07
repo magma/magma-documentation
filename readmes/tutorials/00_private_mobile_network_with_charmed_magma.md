@@ -41,48 +41,28 @@ for more information.
 
 ## Call for Contributors & Alternatives
 
-The Juju scripts are currently unmaintained. We encourage community members to help maintain them.
-If you are interested in contributing, please engage via:
-- [GitHub Issue #15763](https://github.com/magma/magma/issues/15763)
+**Juju-based deployment is currently unmaintained.**
+
+The Juju scripts are retained for legacy and ecosystem reasons but are **not actively maintained by the core team**.  
+Community contributors are encouraged to help maintain and modernize them.
+
+If you are interested in contributing or tracking the status of Juju scripts, please engage via:
+- **GitHub Issue #15763** (canonical tracking issue)
 - Magma Slack channels
 
-### Supported Deployment Alternatives
+### Supported Deployment Alternatives (Recommended)
 
-For a supported and actively maintained deployment experience, please consider:
-- **[AGW Docker Install](https://github.com/magma/magma/blob/master/lte/gateway/deploy/agw_install_docker.sh)**: For Access Gateway deployment.
-- **[Magma Deployer](https://github.com/magma/magma-deployer)**: The modern deployment repository for Magma.
+For a supported and actively maintained deployment experience, please use:
+- **AGW Docker Install** – for Access Gateway deployment
+- **Magma Deployer** – the modern, container-based deployment repository
 
 ### Comparison
 
-| Feature | Juju Deployment | Container/Deployer Based |
-|---------|-----------------|--------------------------|
+| Feature | Juju Deployment | Container / Deployer Based |
+|-------|-----------------|----------------------------|
 | **Status** | Unmaintained (Legacy) | **Active / Recommended** |
-| **Maintenance** | Community (Pending) | Core Team & Community |
+| **Maintenance** | Community (Needed) | Core Team & Community |
 | **Scalability** | Variable | High |
-| **Portability** | Juju-dependent | Universal (Docker/K8s) |
+| **Portability** | Juju-dependent | Universal (Docker / K8s) |
 
-Migration guidance is being tracked under [Issue #15755](https://github.com/magma/magma/issues/15755).
-
-## Call for Contributors & Alternatives
-
-The Juju scripts are currently unmaintained. We encourage community members to help maintain them.
-If you are interested in contributing, please engage via:
-- [GitHub Issue #15763](https://github.com/magma/magma/issues/15763)
-- Magma Slack channels
-
-### Supported Deployment Alternatives
-
-For a supported and actively maintained deployment experience, please consider:
-- **[AGW Docker Install](https://github.com/magma/magma/blob/master/lte/gateway/deploy/agw_install_docker.sh)**: For Access Gateway deployment.
-- **[Magma Deployer](https://github.com/magma/magma-deployer)**: The modern deployment repository for Magma.
-
-### Comparison
-
-| Feature | Juju Deployment | Container/Deployer Based |
-|---------|-----------------|--------------------------|
-| **Status** | Unmaintained (Legacy) | **Active / Recommended** |
-| **Maintenance** | Community (Pending) | Core Team & Community |
-| **Scalability** | Variable | High |
-| **Portability** | Juju-dependent | Universal (Docker/K8s) |
-
-Migration guidance is being tracked under [Issue #15755](https://github.com/magma/magma/issues/15755).
+> Juju scripts are being tracked and discussed under **Issue #15763**, which supersedes the earlier deprecation proposal (#15755).

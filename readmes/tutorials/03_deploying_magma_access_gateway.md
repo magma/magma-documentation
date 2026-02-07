@@ -98,6 +98,7 @@ magma-access-gateway-operator/0*  active    idle   0        18.188.161.66
 
 Machine  State    Address        Inst id               Series  AZ  Message
 0        started  18.188.161.66  manual:18.188.161.66  focal       Manually provisioned machine
+```
 
 ## Call for Contributors & Alternatives
 
