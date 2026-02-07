@@ -84,6 +84,6 @@ The Access Gateway must be installed on a machine with the following specificati
 > **📢 For detailed information about the maintenance status, supported alternatives, and how to contribute, please see the [Juju Deployment Maintenance Notice](../common/juju_maintenance_notice.md).**
 >
 > **Related GitHub Issues:**
+>
 > - [Issue #15763](https://github.com/magma/magma/issues/15763) – Canonical tracking issue for Juju scripts
 > - [Issue #15755](https://github.com/magma/magma/issues/15755) – Earlier deprecation proposal (superseded)
-
