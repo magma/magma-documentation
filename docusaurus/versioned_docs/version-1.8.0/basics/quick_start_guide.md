@@ -77,7 +77,7 @@ We will kick off the initial build of the AGW from source here.
 ```bash
 HOST [magma/lte/gateway]$ vagrant ssh magma
 MAGMA-VM [/home/vagrant]$ cd magma/lte/gateway
-MAGMA-VM [/home/vagrant/magma/lte/gateway]$ make run
+MAGMA-VM [/home/vagrant/magma/lte/gateway]$ bazel build
 ```
 
 **Note**: If you encounter unexpected errors during this process, try running
