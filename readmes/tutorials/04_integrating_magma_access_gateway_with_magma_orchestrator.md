@@ -114,12 +114,3 @@ Use the credentials from the previous step.
 4. Click on "Save and Continue". You should ignore the next tabs and continue clicking on "Save and Continue".
 5. Click on "my-gateway"
 6. You should see your gateway's health go to "Good" after a few minutes
-
-## Call for Contributors & Alternatives
-
-> **📢 For detailed information about the maintenance status, supported alternatives, and how to contribute, please see the [Juju Deployment Maintenance Notice](../common/juju_maintenance_notice.md).**
->
-> **Related GitHub Issues:**
->
-> - [Issue #15763](https://github.com/magma/magma/issues/15763) – Canonical tracking issue for Juju scripts
-> - [Issue #15755](https://github.com/magma/magma/issues/15755) – Earlier deprecation proposal (superseded)

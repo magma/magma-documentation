@@ -99,12 +99,3 @@ magma-access-gateway-operator/0*  active    idle   0        18.188.161.66
 Machine  State    Address        Inst id               Series  AZ  Message
 0        started  18.188.161.66  manual:18.188.161.66  focal       Manually provisioned machine
 ```
-
-## Call for Contributors & Alternatives
-
-> **📢 For detailed information about the maintenance status, supported alternatives, and how to contribute, please see the [Juju Deployment Maintenance Notice](../common/juju_maintenance_notice.md).**
->
-> **Related GitHub Issues:**
->
-> - [Issue #15763](https://github.com/magma/magma/issues/15763) – Canonical tracking issue for Juju scripts
-> - [Issue #15755](https://github.com/magma/magma/issues/15755) – Earlier deprecation proposal (superseded)

@@ -38,12 +38,3 @@ project to simulate usage of this network. You will need:
 that Juju supports. See [Juju Clouds](https://juju.is/docs/olm/juju-supported-clouds)
 for more information.
 [^2]: All the commands were tested from a Ubuntu 22.04 LTS machine.
-
-## Call for Contributors & Alternatives
-
-> **📢 For detailed information about the maintenance status, supported alternatives, and how to contribute, please see the [Juju Deployment Maintenance Notice](../common/juju_maintenance_notice.md).**
->
-> **Related GitHub Issues:**
->
-> - [Issue #15763](https://github.com/magma/magma/issues/15763) – Canonical tracking issue for Juju scripts
-> - [Issue #15755](https://github.com/magma/magma/issues/15755) – Earlier deprecation proposal (superseded)

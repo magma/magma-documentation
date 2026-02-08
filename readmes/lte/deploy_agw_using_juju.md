@@ -78,12 +78,5 @@ The Access Gateway must be installed on a machine with the following specificati
     Deploy Magma Access Gateway:
 
     ```bash
-    
-## Call for Contributors & Alternatives
-
-> **📢 For detailed information about the maintenance status, supported alternatives, and how to contribute, please see the [Juju Deployment Maintenance Notice](../common/juju_maintenance_notice.md).**
->
-> **Related GitHub Issues:**
->
-> - [Issue #15763](https://github.com/magma/magma/issues/15763) – Canonical tracking issue for Juju scripts
-> - [Issue #15755](https://github.com/magma/magma/issues/15755) – Earlier deprecation proposal (superseded)
+    juju deploy magma-access-gateway-operator --config agw_config.yaml --channel=edge --to <AGW machine ID>
+    ```
