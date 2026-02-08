@@ -7,8 +7,9 @@ services:
       context: .
       target: dev
     container_name: docusaurus_local
+    mem_limit: 4g
     ports:
-      - "3000:3000"      
+      - "3000:3000"
     volumes:
       - ./../readmes:/opt/docusaurus/docs
     environment:

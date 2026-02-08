@@ -31,8 +31,7 @@ COPY versioned_sidebars versioned_sidebars
 
 # Configuration files
 COPY docusaurus.config.js .
-COPY package.json .
-COPY package-lock.json* .
+COPY package.json package-lock.json* ./
 COPY sidebars.js .
 COPY sidebars.json .
 COPY test.js .
