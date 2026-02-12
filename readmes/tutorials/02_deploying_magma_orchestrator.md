@@ -4,6 +4,12 @@ title: 2. Deploying Magma Orchestrator
 hide_title: true
 ---
 
+:::warning
+**UNMAINTAINED STATUS**: This Juju-based deployment guide is **UNMAINTAINED**.
+The scripts may not work with newer Juju versions or the current Magma architecture.
+Juju scripts currently live in the `magma/magma` repository. Their proposed migration to the [deployer repository](https://github.com/magma/magma-deployer) is pending TSC consensus and a vote.
+:::
+
 # 2. Deploying Magma Orchestrator
 
 In this section, we will deploy Magma Orchestrator on AWS's managed Kubernetes service (EKS) using

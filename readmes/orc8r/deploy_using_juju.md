@@ -4,6 +4,12 @@ title: Deploy Orchestrator using Juju (Beta)
 hide_title: true
 ---
 
+:::warning
+**UNMAINTAINED STATUS**: This Juju-based deployment guide is **UNMAINTAINED**.
+The scripts may not work with newer Juju versions or the current Magma architecture.
+Juju scripts currently live in the `magma/magma` repository. Their proposed migration to the [deployer repository](https://github.com/magma/magma-deployer) is pending TSC consensus and a vote.
+:::
+
 # Deploy Orchestrator using Juju (Beta)
 
 This how-to guide can be used to deploy Magma's Orchestrator on any cloud
