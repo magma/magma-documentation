@@ -21,9 +21,8 @@ ENV FORCE_COLOR=0
 RUN corepack enable
 WORKDIR /opt/docusaurus
 
-# Documentation contents
-# The docs directory is overwritten by compose file
-COPY docs docs
+# Documentation contents from readmes/ (via additional_contexts)
+COPY --from=readmes . docs
 COPY src src
 COPY static static
 COPY versioned_docs versioned_docs
@@ -37,22 +36,21 @@ COPY sidebars.json .
 COPY test.js .
 COPY versions.json .
 
+WORKDIR /opt/docusaurus
+RUN [ ! -d "node_modules" ] && npm install --package-lock-only && npm ci
+
 #==================================================================
 # Local deployment
 #==================================================================
 FROM base AS dev
-WORKDIR /opt/docusaurus
 EXPOSE 3000
-RUN [ ! -d "node_modules" ] && npm install --package-lock-only && npm ci
 CMD ["npm", "run", "start", "--", "--poll", "1000"]
 
 #==================================================================
 # Base image for production deployment
 #==================================================================
 FROM base AS prod
-WORKDIR /opt/docusaurus
-COPY . /opt/docusaurus/
-RUN npm ci
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN npm run build
 
 #==================================================================

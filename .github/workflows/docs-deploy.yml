@@ -23,30 +23,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'docusaurus/package-lock.json'
-      
-      - name: Install dependencies
-        working-directory: docusaurus
-        run: npm ci
-      
-      - name: Build Docusaurus
-        working-directory: docusaurus
-        run: npm run build
-      
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
-      
+
+      - name: Build production image
+        run: >
+          docker build
+          --build-context readmes=readmes
+          --target prod
+          -t docusaurus-prod
+          docusaurus
+
+      - name: Extract build output
+        run: |
+          docker create --name docusaurus-build docusaurus-prod
+          docker cp docusaurus-build:/opt/docusaurus/build ./build
+          docker rm docusaurus-build
+
       - name: Upload artifact
         id: upload-artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docusaurus/build'
+          path: 'build'
 
   deploy:
     name: Deploy to GitHub Pages
@@ -56,6 +52,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -124,7 +124,7 @@ Following are the feature set which are available as part of current release
 ### Enabling / Disabling the 5G Feature set
 
    5G feature can be disabled or enabled using swagger API for an LTE Network under Cellular section
-   Swagger API : PUT - /lte/{network_id}/cellular/epc
+   Swagger API : PUT - /lte/`{network_id}`/cellular/epc
    Below is the payload
 
    ![Integrated 5G sa enable 5F Feature set](../assets/lte/integrated_5G_sa_enable_5G_feature_set.png?raw=true "Enable 5G Feature set")

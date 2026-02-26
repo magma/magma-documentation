@@ -5,6 +5,8 @@ services:
   dev:
     build:
       context: .
+      additional_contexts:
+        readmes: ../readmes
       target: dev
     container_name: docusaurus_local
     mem_limit: 4g
@@ -15,9 +17,11 @@ services:
     environment:
       - NODE_ENV=development
 
-  serve: # TODO: fix issues
+  serve:
     build:
       context: .
+      additional_contexts:
+        readmes: ../readmes
       target: serve
     container_name: docusaurus
     ports:
@@ -25,9 +29,11 @@ services:
     environment:
       - NODE_ENV=production
 
-  caddy: # TODO: fix issues
+  caddy:
     build:
       context: .
+      additional_contexts:
+        readmes: ../readmes
       target: caddy
     container_name: docusaurus_caddy
     ports:
