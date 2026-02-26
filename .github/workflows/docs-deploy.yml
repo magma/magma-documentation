@@ -38,9 +38,6 @@ jobs:
           docker cp docusaurus-build:/opt/docusaurus/build ./build
           docker rm docusaurus-build
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
         id: upload-artifact
         uses: actions/upload-pages-artifact@v3
@@ -55,6 +52,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
