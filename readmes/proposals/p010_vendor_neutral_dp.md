@@ -98,7 +98,7 @@ functionality with in a plugin-based manner.
 
 The DP will sit between the SAS and the CBSD or downstream DP.
 
-<img src="media/p010_vendor_neutral_dp_image1.png" style="width:5.21875in;height:2.09375in" />
+<img src="media/p010_vendor_neutral_dp_image1.png" style={{width: "5.21875in", height: "2.09375in"}} />
 
 ---
 
@@ -110,7 +110,7 @@ The deployment of the vendor neutral DP can be in any generic kubernetes
 environment such as an on premise compute node (or set of nodes) or in a
 cloud environment such as AWS.
 
-<img src="media/p010_vendor_neutral_dp_image2.png" style="width:5.54167in;height:2.72917in" />
+<img src="media/p010_vendor_neutral_dp_image2.png" style={{width: "5.54167in", height: "2.72917in"}} />
 
 ---
 
