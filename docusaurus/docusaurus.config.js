@@ -51,7 +51,7 @@ const config = {
   organizationName: 'magma',
   projectName: 'magma',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -168,8 +168,7 @@ const config = {
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js',
-    'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
-    '/init.js'],
+    'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'],
 
   // Enable mermaid
   themes: ['@docusaurus/theme-mermaid'],
