@@ -18,8 +18,8 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
-const url = process.env.DOCUSAURUS_URL || 'https://magma.github.io'
-const baseUrl = process.env.DOCUSAURUS_BASE_URL || '/magma-documentation/'
+const url = process.env.DOCUSAURUS_URL || 'https://docs.magmacore.org'
+const baseUrl = process.env.DOCUSAURUS_BASE_URL || '/'
 
 // Security note on visibility of this secret in the source code: the API key is
 // not secured by secrecy. It is secured by a referer check for magma.github.io
