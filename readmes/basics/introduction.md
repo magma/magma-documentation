@@ -64,6 +64,15 @@ Magma leverages a variety of modern technologies to implement its solutions:
     - The main programming languages used in development.
     - Multiple language equals multiple opportunities to contribute.
 
+## Deployment Methods
+
+Magma supports multiple deployment methods for the Access Gateway (AGW):
+
+- **Docker-based AGW** (Recommended): The modern, containerized approach for development and production. See the [AGW Docker deployment guide](./deployment/agw/docker.md).
+- **Bare Metal**: For production deployments on physical hardware.
+
+> **Deprecation Notice**: Vagrant-based AGW deployment has been **deprecated** and will be removed in a future release. Please migrate to the Docker-based deployment method.
+
 ## Community
 
 Join the [Magma Slack channel](https://join.slack.com/t/magmacore/shared_invite/zt-g76zkofr-g6~jYiS3KRzC9qhAISUC2A) and interact with our active community.
