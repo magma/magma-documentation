@@ -10,14 +10,16 @@ This guide covers tips for quickly validating AGW changes.
 
 ## Run all unit tests
 
-Unit testing for AGW can be done either inside the magma-dev VM, or inside the devcontainer or bazel-base Docker containers.
+Unit testing for AGW can be done either inside the Docker-based AGW container, the devcontainer, or bazel-base Docker containers.
 
-To SSH into the magma-dev VM, run
+> **Note**: Vagrant-based testing has been deprecated. Please use Docker containers.
+
+To use Docker-based AGW, run:
 
 ```bash
-[HOST] cd $MAGMA_ROOT/lte/gateway
-[HOST] vagrant up magma
-[HOST] vagrant ssh magma
+[HOST] cd $MAGMA_ROOT/lte/gateway/deploy
+[HOST] ./agw_docker_install.sh
+[HOST] docker exec -it magma_control /bin/bash
 ```
 
 To start the devcontainer, run
