@@ -23,7 +23,7 @@ To bring up an Access Gateway (AGW) using Docker, follow the [AGW Docker deploym
 Quick start:
 
 ```bash
-HOST [magma/lte/gateway]$ cd lte/gateway/deploy
+HOST [magma/lte/gateway]$ cd deploy
 HOST [magma/lte/gateway/deploy]$ ./agw_docker_install.sh
 ```
 

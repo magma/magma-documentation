@@ -110,11 +110,13 @@ The following Magma environments currently support Bazel:
         - The devcontainer is defined in `.devcontainer/Dockerfile` and meant for local development. The docker image is published at [`ghcr.io/magma/magma/devcontainer:latest`](https://github.com/magma/magma/pkgs/container/magma%2Fdevcontainer).
     - **Bazel-base**
         - The Bazel-base docker container is a minimal container where only required dependencies are installed. While this image is mainly intended to be used in CI, it can also be useful for local testing. The Bazel-base image is defined in `.devcontainer/bazel-base/Dockerfile` and published at [`ghcr.io/magma/magma/bazel-base:latest`](https://github.com/magma/magma/pkgs/container/magma%2Fbazel-base).
-- Vagrant VMs
-    - **magma-dev**
-        - The magma-dev virtual machine is intended for local development and for extended testing in CI. It can be used to run the Magma AGW services, as well as e.g. the [Python sudo tests](#python-sudo-tests).
-    - **magma-test**
-        - The magma-test virtual machine is used in CI to run the [LTE integration tests](#lte-integration-tests).
+    - Vagrant VMs (Deprecated)
+        - **magma-dev**
+            - The magma-dev virtual machine is intended for local development and for extended testing in CI. It can be used to run the Magma AGW services, as well as e.g. the [Python sudo tests](#python-sudo-tests).
+            - > **Note**: Vagrant-based development has been deprecated. Use Docker-based AGW instead.
+        - **magma-test**
+            - The magma-test virtual machine is used in CI to run the [LTE integration tests](#lte-integration-tests).
+            - > **Note**: Vagrant-based testing has been deprecated.
 
 ### Caching
 

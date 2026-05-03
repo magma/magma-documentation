@@ -77,11 +77,11 @@ bazel test //orc8r/gateway/c/...:* //lte/gateway/c/...:* # to test all C/C++ tar
 ### Test Go AGW services
 
 We have several Go implementations of AGW services that live in `orc8r/gateway/go`.
-To test any changes, run the following from inside the magma-dev VM
+To test any changes, run the following from inside the Docker container
 
 ```bash
-[VM] cd magma/orc8r/gateway/go
-[VM] go test ./...
+[CONTAINER] cd magma/orc8r/gateway/go
+[CONTAINER] go test ./...
 ```
 
 ## Format AGW
@@ -110,11 +110,11 @@ cd $MAGMA/lte/gateway/python
 
 ### Format C/C++
 
-To run formatting for each C/C++ service, run the following from inside the magma-dev VM
+To run formatting for each C/C++ service, run the following from inside the Docker container
 
 ```bash
-[VM] cd magma/dev_tools
-[VM] ./clang_format.sh
+[CONTAINER] cd magma/dev_tools
+[CONTAINER] ./clang_format.sh
 ```
 
 #### Apply IWYU
