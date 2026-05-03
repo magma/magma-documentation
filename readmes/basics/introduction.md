@@ -68,10 +68,10 @@ Magma leverages a variety of modern technologies to implement its solutions:
 
 Magma supports multiple deployment methods for the Access Gateway (AGW):
 
-- **Docker-based AGW** (Recommended): The modern, containerized approach for development and production. See the [AGW Docker deployment guide](./deployment/agw/docker.md).
+- **Docker-based AGW** (Recommended): The modern, containerized approach for development and production. See the [AGW Docker deployment guide](../deployment/agw/docker.md).
 - **Bare Metal**: For production deployments on physical hardware.
 
-> **Deprecation Notice**: Vagrant-based AGW deployment has been **deprecated** and will be removed in a future release. Please migrate to the Docker-based deployment method.
+> **Deprecation Notice**: Vagrant-based AGW deployment has been **deprecated** and will be removed in a future release. Please migrate to the Docker-based deployment method. See the Vagrant-to-Docker migration guide in issue [#15754](https://github.com/magma/magma/issues/15754) for detailed instructions.
 
 ## Community
 
