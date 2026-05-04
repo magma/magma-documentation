@@ -10,14 +10,14 @@ This guide covers tips for quickly validating AGW changes.
 
 ## Run all unit tests
 
-Unit testing for AGW can be done either inside the magma-dev VM, or inside the devcontainer or bazel-base Docker containers.
+Unit testing for AGW can be done either inside the Docker-based AGW container, the devcontainer, or bazel-base Docker containers.
 
-To SSH into the magma-dev VM, run
+To use Docker-based AGW, run:
 
 ```bash
-[HOST] cd $MAGMA_ROOT/lte/gateway
-[HOST] vagrant up magma
-[HOST] vagrant ssh magma
+[HOST] cd $MAGMA_ROOT/lte/gateway/deploy
+[HOST] ./agw_docker_install.sh
+[HOST] docker exec -it magma_control /bin/bash
 ```
 
 To start the devcontainer, run
@@ -75,11 +75,11 @@ bazel test //orc8r/gateway/c/...:* //lte/gateway/c/...:* # to test all C/C++ tar
 ### Test Go AGW services
 
 We have several Go implementations of AGW services that live in `orc8r/gateway/go`.
-To test any changes, run the following from inside the magma-dev VM
+To test any changes, run the following from inside the Docker container
 
 ```bash
-[VM] cd magma/orc8r/gateway/go
-[VM] go test ./...
+[CONTAINER] cd magma/orc8r/gateway/go
+[CONTAINER] go test ./...
 ```
 
 ## Format AGW
@@ -108,11 +108,11 @@ cd $MAGMA/lte/gateway/python
 
 ### Format C/C++
 
-To run formatting for each C/C++ service, run the following from inside the magma-dev VM
+To run formatting for each C/C++ service, run the following from inside the Docker container
 
 ```bash
-[VM] cd magma/dev_tools
-[VM] ./clang_format.sh
+[CONTAINER] cd magma/dev_tools
+[CONTAINER] ./clang_format.sh
 ```
 
 #### Apply IWYU

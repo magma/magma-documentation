@@ -28,16 +28,17 @@ Note that the following is supported starting with magma v1.9. For older version
     Make sure you have installed all the tools specified in the [prerequisites](https://magma.github.io/magma/docs/basics/prerequisites#prerequisites)
 
 3. **Build and create deb package**.
-    To build an AGW package spin up a vagrant machine and then build and create a deb package.
+    To build an AGW package, use the Docker-based AGW environment or a bare metal machine.
 
-    From `$MAGMA_ROOT/lte/gateway` on your host machine run:
+    From `$MAGMA_ROOT/lte/gateway` on your host machine, you can use Docker:
 
     ```bash
-    vagrant up magma
-    vagrant ssh magma
+    cd lte/gateway/deploy
+    ./agw_docker_install.sh
+    docker exec -it magma_control /bin/bash
     ```
 
-    In the VM from `$MAGMA_ROOT` run:
+    In the container from `$MAGMA_ROOT` run:
 
     ```bash
     bazel run //lte/gateway/release:release_build --config=production
@@ -52,7 +53,7 @@ Note that the following is supported starting with magma v1.9. For older version
     Omitting the `--config=production` flag will compile all C++ services with `Debug` compiler flags and enable ASAN. This is recommended for testing only as it will impact performance. In contrast, the production package has C++ services built with `RelWithDebInfo` compiler flags.
 
 4. **Locate the packages**.
-    Once the above command finished you can find the packages inside the VM:
+    Once the above command finished you can find the packages inside the container:
 
     ```bash
     cd /tmp/packages

@@ -42,7 +42,8 @@ The control proxy must have `\n` characters as line breaks. Here is a sample req
 2. The operator runs the `register.py` script at the gateway with the registration token and its Orc8r's domain name.
 
    ```shell
-   MAGMA-VM [/home/vagrant]$ sudo /home/vagrant/build/python/bin/python3 ~/magma/orc8r/gateway/python/scripts/register.py [-h] [--ca-file CA_FILE] [--cloud-port CLOUD_PORT] [--no-control-proxy] DOMAIN_NAME REGISTRATION_TOKEN 
+   MAGMA-CONTROL$ docker exec -it magma_control /bin/bash
+   MAGMA-CONTROL$ sudo /opt/magma/bin/python3 /opt/magma/orc8r/gateway/python/scripts/register.py [-h] [--ca-file CA_FILE] [--cloud-port CLOUD_PORT] [--no-control-proxy] DOMAIN_NAME REGISTRATION_TOKEN 
    ```
 
    The operator can optionally set the root CA file with the `--ca-file CA_FILE` flag or disable writing to the control proxy file with the `--no-control-proxy` flag.
@@ -50,7 +51,8 @@ The control proxy must have `\n` characters as line breaks. Here is a sample req
    For example, in a testing environment with the `rootCA.pem` and `control_proxy.yml` configured, the operator could run
 
    ```shell
-   MAGMA-VM [/home/vagrant]$ sudo /home/vagrant/build/python/bin/python3 ~/magma/orc8r/gateway/python/scripts/register.py magma.test reg_t5S4zjhD0tXRTmkYKQoN91FmWnQSK2  --cloud-port 7444 --no-control-proxy 
+   MAGMA-CONTROL$ docker exec -it magma_control /bin/bash
+   MAGMA-CONTROL$ sudo /opt/magma/bin/python3 /opt/magma/orc8r/gateway/python/scripts/register.py magma.test reg_t5S4zjhD0tXRTmkYKQoN91FmWnQSK2  --cloud-port 7444 --no-control-proxy 
    ```
 
    Upon success, the script will print the gateway information that was registered and run `checkin_cli.py` automatically. Below is an example of the output of a successful register attempt.
