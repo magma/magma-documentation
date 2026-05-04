@@ -12,8 +12,6 @@ This guide covers tips for quickly validating AGW changes.
 
 Unit testing for AGW can be done either inside the Docker-based AGW container, the devcontainer, or bazel-base Docker containers.
 
-> **Note**: Vagrant-based testing has been deprecated. Please use Docker containers.
-
 To use Docker-based AGW, run:
 
 ```bash

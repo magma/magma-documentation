@@ -6,8 +6,6 @@ hide_title: true
 
 # S1AP Federated Integration Tests
 
-> **Note**: Vagrant-based testing has been deprecated. Docker-based deployment is now recommended.
-
 The S1AP Integration Test only tests the AGW. The objective of the **S1AP
 Federated Integration Tests** is to provide a test platform
 to run Magma with all of its components. That is, end-to-end tests with all

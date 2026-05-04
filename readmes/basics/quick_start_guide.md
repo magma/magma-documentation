@@ -11,21 +11,17 @@ installing Magma for a production deployment.
 
 With the [prereqs](prerequisites.md) installed, we can now set up a minimal
 end-to-end system on your development environment. In this guide, we'll start
-by running the LTE access gateway (via Docker) and orchestrator cloud, and then
+by running the LTE access gateway and orchestrator cloud, and then
 register your local access gateway with your local cloud for management.
-
-> **Note**: Vagrant-based development has been deprecated. Please use the
-> Docker-based AGW deployment. See the [AGW Docker deployment guide](../deployment/agw/docker.md)
-> for the latest instructions.
 
 ## Provisioning the environment
 
 Go ahead and open up 2 fresh terminal tabs.
 
-### Terminal Tab 1: Provision the AGW (Docker)
+### Terminal Tab 1: Provision the AGW VM
 
 The development environment can use Docker to run the Access Gateway. See the
-[AGW Docker deployment](../deployment/agw/docker.md) for detailed instructions.
+[AGW Docker deployment](../lte/deploy_install_docker.md) for detailed instructions.
 
 For quick setup:
 

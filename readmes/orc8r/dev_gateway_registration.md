@@ -41,8 +41,6 @@ The control proxy must have `\n` characters as line breaks. Here is a sample req
    The registration token expires every 30 minutes and automatically refreshes every time the operator fetches this unregistered gateway.
 2. The operator runs the `register.py` script at the gateway with the registration token and its Orc8r's domain name.
 
-   > **Note**: Vagrant-based AGW has been deprecated. Please use Docker-based AGW deployment.
-
    ```shell
    MAGMA-CONTROL$ docker exec -it magma_control /bin/bash
    MAGMA-CONTROL$ sudo /opt/magma/bin/python3 /opt/magma/orc8r/gateway/python/scripts/register.py [-h] [--ca-file CA_FILE] [--cloud-port CLOUD_PORT] [--no-control-proxy] DOMAIN_NAME REGISTRATION_TOKEN 
