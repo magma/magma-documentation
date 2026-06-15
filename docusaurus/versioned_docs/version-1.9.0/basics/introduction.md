@@ -2,6 +2,7 @@
 id: introduction
 title: Introduction
 hide_title: true
+slug: /
 ---
 # Introduction
 

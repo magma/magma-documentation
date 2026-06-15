@@ -66,6 +66,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          routeBasePath: '/',
         },
         theme: {
           customCss: './src/css/custom.css',
