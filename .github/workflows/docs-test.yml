@@ -26,7 +26,7 @@ jobs:
     name: Docusaurus Build & Log
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build docusaurus container
         run: |
           cd docusaurus/
@@ -56,7 +56,7 @@ jobs:
     name: Markdown Format Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install markdownlint-cli
         run: npm install -g markdownlint-cli
       - name: Run markdownlint
@@ -66,7 +66,7 @@ jobs:
     name: Translation Consistency Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Grant execute permissions and convert script file
@@ -81,7 +81,7 @@ jobs:
     name: Docusaurus ID & Filename Sync
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Grant execute permissions to scripts and convert script file
         run: |
           chmod +x ./.github/workflows/scripts/check_id_matches_filename.sh
@@ -93,7 +93,7 @@ jobs:
     name: Broken Symlinks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Check for broken symlinks in docusaurus/
         working-directory: ${{ github.workspace }}/docusaurus
         run: |
@@ -110,7 +110,7 @@ jobs:
     name: Markdown URL Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: 'yes'
