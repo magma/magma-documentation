@@ -16,7 +16,7 @@
 #==================================================================
 # Node version 24 is the curent LTS
 # The slim verision is based on a small debian image
-FROM node:24-slim AS base
+FROM node:26-slim AS base
 ENV FORCE_COLOR=0
 RUN corepack enable
 WORKDIR /opt/docusaurus
