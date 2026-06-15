@@ -9,7 +9,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM node:20.16
+FROM node:26-slim
 
 RUN mkdir -p /readmes
 WORKDIR /readmes
