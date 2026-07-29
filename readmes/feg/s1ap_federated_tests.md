@@ -26,7 +26,7 @@ graph LR;
     AGW ---|data| Z[[magma_trfserver]];
 ```
 
-The services will run either on Vagrant VMs or on Docker:
+The services will run on Docker:
 
 | Services          |   Vagrant VM    |  Docker   |
 |-------------------|:---------------:|:---------:|

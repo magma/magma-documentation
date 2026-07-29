@@ -114,11 +114,11 @@ magma/lte/gateway/python/scripts. These are:
 6. Subscriberdb: subscriber_cli.py
 7. Enodebd: enodebd_cli.py
 
-Each of these CLIs can be used in the gateway VM:
+Each of these CLIs can be used in the Docker container:
 
 ```bash
-vagrant@magma-dev:~$ magtivate
-(python) vagrant@magma-dev:~$ enodebd_cli.py -h
+MAGMA-CONTROL$ docker exec -it magma_control /bin/bash
+MAGMA-CONTROL$ enodebd_cli.py -h
 
 usage: enodebd_cli.py [-h]
                       {get_parameter,set_parameter,config_enodeb,reboot_enodeb,get_status}
@@ -137,3 +137,5 @@ subcommands:
     reboot_enodeb       Reboot eNodeB
     get_status          Get eNodeB status
 ```
+
+> **Note**: For Vagrant-based development (deprecated), use `vagrant@magma-dev:~$ magtivate`
