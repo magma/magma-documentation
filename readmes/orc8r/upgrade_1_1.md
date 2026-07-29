@@ -24,9 +24,7 @@ First, create a new directory somewhere to store your new root Terraform module
 for the 1.1.x deployment. We have an example root module at \<https://github.com/facebookincubator/magma/tree/v1.1/orc8r/cloud/deploy/terraform/orc8r-helm-aws/examples/online-upgrade\>
 that we recommend you use for the upgrade. Copy all the files to your new
 directory and change the `source` attribute of both modules in `main.tf` to
-`github.com/facebookincubator/magma//orc8r/cloud/deploy/terraform/orc8r-aws` and
-`github.com/facebookincubator/magma//orc8r/cloud/deploy/terraform/orc8r-helm-aws`,
-respectively.
+`https://github.com/facebookincubator/magma/tree/v1.0.0/orc8r/cloud/deploy/terraform`
 
 Once you've got this root module set up and your variables defined, run
 `terraform init` in this directory.

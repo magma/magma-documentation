@@ -25,7 +25,7 @@ For more information on Magma Deployer, please visit the project's
 Quick Install:
 
 ```bash
-sudo bash -c "$(curl -sL https://raw.githubusercontent.com/magma/magma-deployer/refs/heads/main/orc8r-deployer/deploy-orc8r.sh)"
+sudo bash -c "$(curl -sL https://raw.githubusercontent.com/magma/magma-deployer/main/orc8r-deployer/deploy-orc8r.sh)"
 ```
 
 Following roles will be installed:
@@ -113,7 +113,7 @@ postgresql-0                                    1/1     Running   0          12m
 Now setup NMS login:
 
 ```bash
-cd ~/magma-deployer
+cd ~/magma-deployer/orc8r-deployer
 ansible-playbook config-orc8r.yml
 ```
 
