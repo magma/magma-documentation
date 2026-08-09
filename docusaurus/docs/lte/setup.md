@@ -1,33 +1,34 @@
 ---
 id: version-1.0.0-setup
-title: AGW Setup (With Vagrant)
-sidebar_label: Setup (With Vagrant)
+title: AGW Setup
+sidebar_label: Setup
 hide_title: true
 original_id: setup
 ---
-# Access Gateway Setup (With Vagrant)
-### Prerequisites
-To develop and manage a Magma VM, you must have the following applications installed locally:
+# Access Gateway Setup
 
-* Virtualbox
-*  Vagrant
-* Ansible
+> **Note**: Vagrant-based AGW setup has been deprecated. Please use Docker-based deployment.
+
+### Prerequisites
+
+To develop and manage a Magma AGW using Docker, you must have the following installed:
+
+- Docker and Docker Compose
+- Ansible (for configuration)
 
 ### Steps
 
-To bring up an Access Gateway (AGW) VM using Vagrant:
+To bring up an Access Gateway (AGW) using Docker, follow the [AGW Docker deployment guide](../deployment/agw/docker.md).
 
-* Run the following command:
+Quick start:
 
-``HOST:magma/lte/gateway USER$ vagrant up magma``
+```bash
+HOST [magma/lte/gateway]$ cd deploy
+HOST [magma/lte/gateway/deploy]$ ./agw_docker_install.sh
+```
 
-Vagrant will bring up the VM, then Ansible will provision the VM.
+Once the Access Gateway is running successfully, proceed to attaching the eNodeB.
 
-
-* Once the Access Gateway VM is up and provisioned, run the following commands:
-
-``HOST:magma/lte/gateway USER$ vagrant ssh magma``<br></br>
-``AGW:~ USER$ cd magma/lte/gateway``<br></br>
-``AGW:~/magma/lte/gateway USER$ make run``
-
-Once the Access Gateway VM is running successfully, proceed to attaching the eNodeB.
+For more details, see:
+- [Quick Start Guide](../basics/quick_start_guide.md)
+- [AGW Docker Deployment](../deployment/agw/docker.md)

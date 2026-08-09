@@ -5,9 +5,12 @@ hide_title: true
 original_id: s1ap_tests
 ---
 # S1AP Integration Tests
-Current testing workflow for VM-only S1AP integration tests. We cover gateway-only tests, cloud-included tests, and some general notes.
 
-Our VM-only tests use 2 to 4 Vagrant-managed VMs hosted on the local device (laptop):
+> **Note**: Vagrant-based testing has been deprecated. Docker-based AGW deployment is now recommended for testing.
+
+Current testing workflow for S1AP integration tests. We cover gateway-only tests, cloud-included tests, and some general notes.
+
+For VM-based testing (deprecated), our tests use 2 to 4 Vagrant-managed VMs:
 
 - *magma*, i.e. magma-dev or gateway
 - *magma_test*, i.e. s1ap_tester

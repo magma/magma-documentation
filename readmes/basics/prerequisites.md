@@ -27,8 +27,6 @@ Development can occur from multiple OS's, where **macOS** and **Ubuntu** are **e
 
    1. [Docker and Docker Compose](https://docs.docker.com/desktop/install/mac-install/)
    2. [Homebrew](https://brew.sh/)
-   3. [VirtualBox](https://www.virtualbox.org/)
-   4. [Vagrant](https://vagrantup.com)
 
    ```bash
    brew install go@1.20 pyenv
@@ -42,7 +40,6 @@ Development can occur from multiple OS's, where **macOS** and **Ubuntu** are **e
    pyenv install 3.8.10
    pyenv global 3.8.10
    pip3 install ansible fabric jsonpickle requests PyYAML
-   vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-reload
    ```
 
    **Note**: In the case where installation of `fabric` through pip was unsuccessful,
@@ -59,8 +56,6 @@ Development can occur from multiple OS's, where **macOS** and **Ubuntu** are **e
 
 1. Install the following tools
    1. [Docker and Docker Compose](https://docs.docker.com/engine/install/ubuntu/)
-   2. [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
-   3. [Vagrant](https://www.vagrantup.com/downloads)
 2. Install golang version 1.20.1.
 
    1. Download the tar file.
@@ -146,14 +141,6 @@ Development can occur from multiple OS's, where **macOS** and **Ubuntu** are **e
       ```bash
       pip3 install ansible fabric jsonpickle requests PyYAML
       ```
-
-5. Install `vagrant` necessary plugin.
-
-   ```bash
-   vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-reload
-   ```
-
-    Make sure `virtualbox` is the default provider for `vagrant` by adding the following line to your `.bashrc` (or equivalent) and restart your shell: `export VAGRANT_DEFAULT_PROVIDER="virtualbox"`.
 
 ## Downloading Magma
 

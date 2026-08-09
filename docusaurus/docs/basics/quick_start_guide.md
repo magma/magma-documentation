@@ -12,35 +12,31 @@ installing Magma for a production deployment.
 
 With the [prereqs](prerequisites.md) installed, we can now set up a minimal
 end-to-end system on your development environment. In this guide, we'll start
-by running the LTE access gateway and orchestrator cloud, and then
+by running the LTE access gateway (via Docker) and orchestrator cloud, and then
 register your local access gateway with your local cloud for management.
 
-We will be spinning up a virtual machine and some docker containers for this
-full setup, so you'll probably want to do this on a system with at least 8GB
-of memory. Our development VM's are in the 192.168.80.0/24 address space, so
-make sure that you don't have anything running which hijacks that (e.g. VPN).
+> **Note**: Vagrant-based development has been deprecated. Please use the
+> Docker-based AGW deployment. See the [AGW Docker deployment guide](../deployment/agw/docker.md)
+> for the latest instructions.
 
-In the following steps, note the prefix in terminal commands. `HOST` means to
-run the indicated command on your host machine, and `MAGMA-VM` on the `magma`
-vagrant machine under `lte/gateway`.
+We will be spinning up docker containers for this full setup, so you'll
+probably want to do this on a system with at least 8GB of memory.
 
 ## Provisioning the environment
 
-Go ahead and open up 2 fresh terminal tabs. Start in
+Go ahead and open up 2 fresh terminal tabs.
 
-### Terminal Tab 1: Provision the AGW VM
+### Terminal Tab 1: Provision the AGW (Docker)
 
-The development environment virtualizes the access gateway so you don't need
-any production hardware on hand to test an end-to-end setup.
-We'll be setting up the LTE AGW VM in this tab.
+The development environment can use Docker to run the Access Gateway. See the
+[AGW Docker deployment](../deployment/agw/docker.md) for detailed instructions.
+
+For quick setup:
 
 ```bash
-HOST [magma]$ cd lte/gateway
-HOST [magma/lte/gateway]$ vagrant up magma
+HOST [magma]$ cd lte/gateway/deploy
+HOST [magma/lte/gateway/deploy]$ ./agw_docker_install.sh
 ```
-
-This will take a few minutes to spin up the VM. While that runs, switch over
-to...
 
 ### Terminal Tab 2: Build Orchestrator
 
@@ -51,38 +47,12 @@ HOST [magma]$ cd orc8r/cloud/docker
 HOST [magma/orc8r/cloud/docker]$ ./build.py -a
 ```
 
-This will build all the docker images for Orchestrator. The `vagrant up` from
-the first tab should finish before the image building, so you should switch
-to that tab and move on for now.
-
 ## Initial Run
-
-Once `vagrant up` in the first tab finishes:
-
-### Terminal Tab 1: Build AGW from Source
-
-We will kick off the initial build of the AGW from source here.
-
-```bash
-HOST [magma/lte/gateway]$ vagrant ssh magma
-MAGMA-VM [/home/vagrant]$ cd magma/lte/gateway
-MAGMA-VM [/home/vagrant/magma/lte/gateway]$ make run
-```
-
-This will take a while (we have a lot of CXX files to build). With 2 extensive
-build jobs running, now is a good time to grab a coffee or lunch. The first
-build ever from source will take a while, but afterwards, a persistent ccache
-and Docker's native layer caching will speed up subsequent builds
-significantly.
-
-You can monitor what happens in the other tab now:
 
 ### Terminal Tab 2: Start Orchestrator
 
 Once the Orchestrator build finishes, we can start the development Orchestrator
-cloud for the first time. We'll also use this time to register the local
-client certificate you'll need to access the local API gateway for your
-development stack.
+cloud for the first time.
 
 Starting Orchestrator is as simple as:
 
@@ -123,31 +93,23 @@ installed client certificates. See [here](https://support.globalsign.com/custome
 for instructions. If you use Chrome or Safari, you may have to restart the
 browser before the certificate can be used.
 
-### Connecting Your Local LTE Gateway to Your Local Cloud
+### Register Your AGW with Orchestrator
 
-At this point, you will have built all the code in the LTE access gateway and
-the Orchestrator cloud. All the services on the LTE access gateway and
-orchestrator cloud are running, but your gateway VM isn't yet set up to
-communicate with your local cloud.
-
-We have a fabric command set up to do this:
+Register your Docker-based AGW with Orchestrator:
 
 ```bash
 HOST [magma]$ cd lte/gateway
-HOST [magma/lte/gateway]$ fab -f dev_tools.py register_vm
+HOST [magma/lte/gateway]$ fab -f dev_tools.py register_agw
 ```
 
-This command will seed your gateway and network on Orchestrator with some
-default LTE configuration values and set your gateway VM up to talk to your
-local Orchestrator cloud. Wait a minute or 2 for the changes to propagate,
-then you can verify that things are working:
+Wait a minute or 2 for the changes to propagate, then you can verify that things are working:
 
 ```bash
-HOST [magma/lte/gateway]$ vagrant ssh magma
+HOST [magma/lte/gateway]$ docker exec -it magma_control /bin/bash
 
-MAGMA-VM$ sudo service magma@* stop
-MAGMA-VM$ sudo service magma@magmad restart
-MAGMA-VM$ sudo tail -f /var/log/syslog
+MAGMA-CONTROL$ sudo service magma@* stop
+MAGMA-CONTROL$ sudo service magma@magmad restart
+MAGMA-CONTROL$ sudo tail -f /var/log/syslog
 
 # After a minute or 2 you should see these messages:
 Sep 27 22:57:35 magma-dev magmad[6226]: [2018-09-27 22:57:35,550 INFO root] Checkin Successful!
@@ -172,6 +134,7 @@ After this, you will be able to access the UI by visiting
 and password `password1234`. If you see Gateway Error 502, don't worry, the
 NMS can take upto 60 seconds to finish starting up.
 
+## Additional Resources
 
-
-
+- For detailed AGW Docker deployment, see [AGW Docker deployment guide](../deployment/agw/docker.md)
+- For testing LTE features without cloud-based network management, see [S1AP integration tests](../lte/s1ap_tests.md)
