@@ -69,7 +69,7 @@ Values for recent Orchestrator releases are summarized below
 Verified with Terraform version `1.0.11`.
 
 - `v1.9` [patch branch](https://github.com/magma/magma/tree/v1.9)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.9`
+- `github.com/magma/magma/tree/v1.9/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.9.0` Helm chart version
 
@@ -78,7 +78,7 @@ Terraform module source
 Verified with Terraform version `1.0.11`.
 
 - `v1.8` [patch branch](https://github.com/magma/magma/tree/v1.8)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.8`
+- `github.com/magma/magma/tree/v1.8/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.8.0` Helm chart version
 
@@ -87,7 +87,7 @@ Terraform module source
 Verified with Terraform version `0.15.0`.
 
 - `v1.6` [patch branch](https://github.com/magma/magma/tree/v1.6)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.6`
+- `github.com/magma/magma/tree/v1.6/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.5.23` Helm chart version
 - Additional notes
@@ -98,7 +98,7 @@ Terraform module source
 Verified with Terraform version `0.14.5`. Terraform `0.15.x` is *not* compatible.
 
 - `v1.5` [patch branch](https://github.com/magma/magma/tree/v1.5)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.5`
+- `github.com/magma/magma/tree/v1.5/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.5.21` Helm chart version
 - Additional notes
@@ -109,7 +109,7 @@ Terraform module source
 Verified with Terraform version `0.14.0`.
 
 - `v1.4` [patch branch](https://github.com/magma/magma/tree/v1.4)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.4`
+- `github.com/magma/magma/tree/v1.4/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.5.16` Helm chart version
 - Additional notes
@@ -120,7 +120,7 @@ Terraform module source
 Verified with Terraform version `0.13.1`.
 
 - `v1.3` [patch branch](https://github.com/magma/magma/tree/v1.3)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.3`
+- `github.com/magma/magma/tree/v1.3/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.4.36` Helm chart version
 - Additional notes
@@ -131,7 +131,7 @@ Terraform module source
 Verified with Terraform version `0.13.1`.
 
 - `v1.2` [patch branch](https://github.com/magma/magma/tree/v1.2)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.2`
+- `github.com/magma/magma/tree/v1.2/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.4.35` Helm chart version
 - Additional notes
@@ -142,7 +142,7 @@ Terraform module source
 Verified with Terraform version `0.12.29`.
 
 - `v1.1` [patch branch](https://github.com/magma/magma/tree/v1.1)
-- `github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.1`
+- `github.com/magma/magma/tree/v1.1/orc8r/cloud/deploy/terraform/orc8r-aws`
 Terraform module source
 - `1.4.21` Helm chart version
 - Additional notes

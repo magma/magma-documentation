@@ -136,7 +136,7 @@ override the following parameters
 - `orc8r_db_engine_version` on fresh Orc8r installs, target Postgres `12.6`
 
 Make sure that the `source` variables for the module definitions point to
-`github.com/magma/magma//orc8r/cloud/deploy/terraform/MODULE?ref=v1.9`.
+`github.com/magma/magma/tree/v1.9/orc8r/cloud/deploy/terraform/`.
 Adjust any other parameters as you see fit. Check the READMEs for the
 relevant Terraform modules to see additional variables that can be set.
 You can [override values](./deploy_terraform_options.md#override-terraform-module-values)
@@ -236,7 +236,7 @@ Create the Orchestrator admin user with the `admin_operator` certificate
 created earlier
 
 ```bash
-kubectl --namespace orc8r exec deploy/orc8r-orchestrator -- \
+kubectl --namespace orc8r exec -it deploy/orc8r-orchestrator -- \
   /var/opt/magma/bin/accessc \
   add-existing -admin -cert /var/opt/magma/certs/admin_operator.pem \
   admin_operator
@@ -246,7 +246,7 @@ If you want to verify the admin user was successfully created, inspect the
 output from
 
 ```bash
-$ kubectl --namespace orc8r exec deploy/orc8r-orchestrator -- \
+$ kubectl --namespace orc8r exec -it deploy/orc8r-orchestrator -- \
   /var/opt/magma/bin/accessc list-certs
 
 # NOTE: actual values will differ
