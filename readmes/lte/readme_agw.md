@@ -126,11 +126,11 @@ magma/lte/gateway/python/scripts. These are:
 7. Enodebd: enodebd_cli.py
 8. State Tracing: state_cli.py
 
-Each of these CLIs can be used in the gateway VM:
+Each of these CLIs can be used in the gateway container:
 
 ```bash
-vagrant@magma-dev:~$ magtivate
-(python) vagrant@magma-dev:~$ enodebd_cli.py -h
+MAGMA-CONTROL$ docker exec -it magma_control /bin/bash
+MAGMA-CONTROL$ enodebd_cli.py -h
 
 usage: enodebd_cli.py [-h]
                       {get_parameter,set_parameter,config_enodeb,reboot_enodeb,get_status}

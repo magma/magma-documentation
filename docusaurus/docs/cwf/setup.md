@@ -1,35 +1,32 @@
 ---
 id: version-1.0.0-setup
-title: CWAG Setup (With Vagrant)
-sidebar_label: Setup (With Vagrant)
+title: CWAG Setup
+sidebar_label: Setup
 hide_title: true
 original_id: setup
 ---
-# CWF Access Gateway Setup (With Vagrant)
-### Prerequisites
-To develop and manage a Magma VM, you must have the following applications installed locally:
+# Carrier Wifi Access Gateway (CWAG) Setup
 
-* Virtualbox
-*  Vagrant
-* Ansible
+> **Note**: Vagrant-based CWAG setup has been deprecated. Please use Docker-based deployment.
+
+### Prerequisites
+
+To develop and manage a Magma CWAG using Docker, you must have the following installed:
+
+- Docker and Docker Compose
+- Ansible (for configuration)
 
 ### Steps
 
-To bring up a Wifi Access Gateway (CWAG) VM using Vagrant:
+To bring up a Carrier Wifi Access Gateway (CWAG) using Docker, follow the [AGW Docker deployment guide](../deployment/agw/docker.md).
 
-* Run the following command:
+Quick start:
 
-``HOST:magma/cwf/gateway USER$ vagrant up cwag``
+```bash
+HOST [magma/cwf/gateway]$ cd cwf/gateway/deploy
+HOST [magma/cwf/gateway/deploy]$ ./agw_docker_install.sh
+```
 
-Vagrant will bring up the VM, then Ansible will provision the VM.
-
-
-* Once the CWAG VM is up and provisioned, run the following commands:
-
-``HOST:magma/cwf/gateway USER$ vagrant ssh cwag``<br></br>
-``AGW:~ USER$ cd magma/cwf/gateway/docker``<br></br>
-``AGW:~/magma/cwf/gateway/docker USER$ docker-compose build --parallel``
-``AGW:~/magma/cwf/gateway/docker USER$ docker-compose up -d``
-
-After this, all the CWAG docker containers should have been brought up
-successfully.
+For more details, see:
+- [Quick Start Guide](../basics/quick_start_guide.md)
+- [AGW Docker Deployment](../deployment/agw/docker.md)

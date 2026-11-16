@@ -15,16 +15,15 @@ Install the following tools:
 
 1. [Docker](https://www.docker.com) and Docker Compose
 2. [Homebrew](https://brew.sh/) *only* for MacOS users
-3. [VirtualBox](https://www.virtualbox.org/)
-3. [Vagrant](https://vagrantup.com)
 
 Replace `brew` with your OS-appropriate package manager as necessary:
 
 ```bash
 brew install python3
 pip3 install ansible fabric3 jsonpickle requests PyYAML
-vagrant plugin install vagrant-vbguest
 ```
+
+> **Note**: Vagrant-based development has been deprecated. Please use the Docker-based AGW deployment instead.
 
 If you are on MacOS, you should start Docker for Mac and increase the memory
 allocation for the Docker engine to at least 4GB (Preferences -> Advanced).
