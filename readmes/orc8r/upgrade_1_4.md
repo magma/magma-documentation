@@ -48,13 +48,13 @@ container versions
 # This will likely be found in main.tf
 
 module orc8r {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.4"
+  source = "github.com/magma/magma/tree/v1.4.0/orc8r/cloud/deploy/terraform/orc8r-aws"
   # ...
   cluster_version = "1.17"   # set to Kubernetes version found above. 1.17 is used as an example here
 }
 
 module orc8r-app {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-helm-aws?ref=v1.4"
+  source = "github.com/magma/magma/tree/v1.4.0/orc8r/cloud/deploy/terraform/orc8r-helm-aws"
   # ...
   orc8r_chart_version   = "1.5.16"
   orc8r_tag             = "MAGMA_TAG"  # from build step, e.g. v1.4.0

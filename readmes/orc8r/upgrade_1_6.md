@@ -35,7 +35,7 @@ Update your root Terraform module
 # This will likely be found in main.tf
 
 module orc8r {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.6"
+  source = "github.com/magma/magma/tree/v1.6.0/orc8r/cloud/deploy/terraform/orc8r-aws"
 
   # Optional: enable AWS DB failure notifications
   # orc8r_sns_email             = "admin@example.com"
@@ -47,7 +47,7 @@ module orc8r {
 module orc8r-app {
   # IMPORTANT: delete all docker_ and helm_ lines
 
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-helm-aws?ref=v1.6"
+  source = "github.com/magma/magma/tree/v1.6.0/orc8r/cloud/deploy/terraform/orc8r-helm-aws"
   orc8r_tag = "v1.6.0"
 
   # Optional: prune ES indices when disk usage exceeds 75% of allocated ES storage
@@ -82,4 +82,4 @@ To upgrade your Postgres database to the correct version follow [these instructi
 
 ### Host custom artifacts
 
-If you wish to use your own artifacts, follow the follow the [Build Orchestrator](https://magma.github.io/magma/docs/orc8r/deploy_build) page to build and publish your own artifacts from the [v1.6 branch of the Magma repo](https://github.com/magma/magma/tree/v1.6), then update your `main.tf` file to point to the appropriate artifactories.
+If you wish to use your own artifacts, follow the [Build Orchestrator](https://magma.github.io/magma/docs/orc8r/deploy_build) page to build and publish your own artifacts from the [v1.6 branch of the Magma repo](https://github.com/magma/magma/tree/v1.6.0), then update your `main.tf` file to point to the appropriate artifactories.

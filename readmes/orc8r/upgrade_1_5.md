@@ -65,7 +65,7 @@ This process prepares your cluster for Orc8r-NMS DB unification. (In release 1.5
 *Paste in shell prompt:*
 
 ```bash
-wget https://raw.githubusercontent.com/magma/magma/v1.5/nms/app/packages/magmalte/scripts/fuji-upgrade/pre-upgrade-migration.sh && chmod +x pre-upgrade-migration.sh && ./pre-upgrade-migration.sh
+wget https://raw.githubusercontent.com/magma/magma/v1.5.0/nms/app/packages/magmalte/scripts/fuji-upgrade/pre-upgrade-migration.sh && chmod +x pre-upgrade-migration.sh && ./pre-upgrade-migration.sh
 ```
 
 The defaults options should likely work, unless the script cannot find the
@@ -96,13 +96,13 @@ container versions
 # This will likely be found in main.tf
 
 module orc8r {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.5"
+  source = "github.com/magma/magma/tree/v1.5.0/orc8r/cloud/deploy/terraform/orc8r-aws"
   # ...
   cluster_version = "1.17"   # set to Kubernetes version found above. 1.17 is used as an example here
 }
 
 module orc8r-app {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-helm-aws?ref=v1.5"
+  source = "github.com/magma/magma/tree/v1.5.0/orc8r/cloud/deploy/terraform/orc8r-helm-aws"
   # ...
   orc8r_chart_version   = "1.5.20"
   orc8r_tag             = "MAGMA_TAG"  # from build step, e.g. v1.5.0

@@ -129,12 +129,12 @@ First, update your `main.tf` file to pull in the v1.2 changes
 
 ```hcl-terraform
 module orc8r {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-aws?ref=v1.2"
+  source = "github.com/magma/magma/tree/v1.2.0/orc8r/cloud/deploy/terraform/orc8r-aws"
   # ...
 }
 
 module orc8r-app {
-  source = "github.com/magma/magma//orc8r/cloud/deploy/terraform/orc8r-helm-aws?ref=v1.2"
+  source = "github.com/magma/magma/tree/v1.2.0/orc8r/cloud/deploy/terraform/orc8r-helm-aws"
   # ...
   orc8r_chart_version = "1.4.35"
   orc8r_tag           = "MAGMA_TAG"  # from build step
